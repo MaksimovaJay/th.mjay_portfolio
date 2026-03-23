@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THMJAY — UI/UX Designer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════
+     PRELOADER
+══════════════════════════════ -->
+<div id="preloader">
+  <canvas id="preloader-rain"></canvas>
+  <div class="pl-scanlines"></div>
+  <div class="pl-inner">
+    <div class="pl-logo">THMJAY</div>
+    <div class="pl-subtitle">UI / UX DESIGNER</div>
+    <div class="pl-bar-wrap">
+      <div class="pl-bar-track">
+        <div class="pl-bar-fill" id="pl-bar"></div>
+      </div>
+      <span class="pl-bar-pct" id="pl-pct">0%</span>
+    </div>
+    <div class="pl-log" id="pl-log"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     STICKY HEADER
+══════════════════════════════ -->
+<header class="sticky-header" id="sticky-header">
+  <div class="sh-logo">THMJAY</div>
+  <nav class="sh-nav">
+    <a href="#portfolio" class="sh-link">□ ПОРТФОЛИО</a>
+    <a href="#about"     class="sh-link">○ ОБО МНЕ</a>
+    <a href="#services"  class="sh-link">△ УСЛУГИ</a>
+    <a href="#reviews"   class="sh-link">◈ ОТЗЫВЫ</a>
+    <a href="#contact"   class="sh-link">✕ СВЯЗЬ</a>
+  </nav>
+  <a href="figma.html" class="sh-cta">FIGMA →</a>
+</header>
+
+<!-- Mobile touch trail canvas (visible only on mobile) -->
+<canvas id="mob-trail" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════
+     HERO SECTION
+══════════════════════════════ -->
+<section class="hero-section" id="hero">
+  <canvas id="rain-canvas"></canvas>
+  <div class="scanlines"></div>
+  <div class="mob-symbols" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="neon-frame">
+      <div class="fc-br"></div>
+      <span class="frame-label tl">SYS::INIT_UI</span>
+      <span class="frame-label tr">VER_2025.03</span>
+      <span class="frame-label bl">THMJAY.PORTFOLIO</span>
+
+      <nav class="hero-nav">
+        <a href="#portfolio" class="nav-link">□ ПОРТФОЛИО</a>
+        <a href="#about"     class="nav-link">○ ОБО МНЕ</a>
+        <a href="#services"  class="nav-link">△ УСЛУГИ</a>
+        <a href="#contact"   class="nav-link">✕ СВЯЗЬ</a>
+        <button class="arcade-trigger" id="arcade-open">▶ ARCADE</button>
+      </nav>
+
+      <div class="hero-title">
+        <div class="hero-name">THMJAY</div>
+        <div class="hero-sub">ЕВГЕНИЯ МАКСИМОВА &nbsp;/&nbsp; UI·UX DESIGNER</div>
+        <div class="hero-jp">ユーザーインターフェース · キバーパンク · デザイン</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOG REVEAL
+══════════════════════════════ -->
+<section class="fog-section" id="fog-section">
+  <canvas id="fog-canvas"></canvas>
+  <div class="fog-content">
+    <div class="fog-label">// CLASSIFIED</div>
+    <div class="fog-statement">ДИЗАЙН —<br>ЭТО РАЗГОВОР</div>
+    <div class="fog-sub">между тобой и твоей аудиторией</div>
+    <div class="fog-quote">"Я верю: каждый сайт должен рассказывать историю.<br>Не просто показывать — а говорить."</div>
+    <div class="fog-author">— ЕВГЕНИЯ МАКСИМОВА · THMJAY</div>
+  </div>
+  <div class="fog-hint">// двигай мышью чтобы увидеть</div>
+</section>
+
+<!-- Индикатор темы джойстика -->
+<div class="theme-hud" id="theme-hud"></div>
+
+<!-- ══════════════════════════════
+     □ ПОРТФОЛИО
+══════════════════════════════ -->
+<section class="cyber-section" id="portfolio">
+  <div class="section-header">
+    <div class="section-btn-icon">□</div>
+    <h2 class="section-title">ПОРТФОЛИО</h2>
+    <div class="section-divider"></div>
+    <span class="section-code">SQ_01</span>
+  </div>
+
+  <a href="figma.html" class="figma-portfolio-link">// 07 проектов в Figma — смотреть все →</a>
+  <div class="portfolio-grid">
+
+    <div class="cyber-panel project-card project-case" data-case="case-proava">
+      <div class="card-thumb card-thumb--proava">
+        <span class="card-thumb-label">PROAVA CLUB</span>
+      </div>
+      <div class="card-body">
+        <div class="card-num">// 001</div>
+        <div class="card-title">ПроАВА КЛУБ</div>
+        <div class="card-tags">
+          <span class="tag">UI DESIGN</span>
+          <span class="tag">LANDING</span>
+        </div>
+        <div class="card-case-hint">// ЧИТАТЬ КЕЙС →</div>
+      </div>
+    </div>
+
+    <a href="https://psihogolik.getcourse.ru/aba_con_2026" target="_blank" class="cyber-panel project-card project-link">
+      <div class="card-thumb card-thumb--aba">
+        <span class="card-thumb-label">ABA CONF</span>
+      </div>
+      <div class="card-body">
+        <div class="card-num">// 002</div>
+        <div class="card-title">ABA CONF 2026</div>
+        <div class="card-tags">
+          <span class="tag">EVENT</span>
+          <span class="tag">UI DESIGN</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.subwaterpumps.com/" target="_blank" class="cyber-panel project-card project-link">
+      <div class="card-thumb card-thumb--swp">
+        <span class="card-thumb-label">SUB WATER PUMPS</span>
+      </div>
+      <div class="card-body">
+        <div class="card-num">// 003</div>
+        <div class="card-title">SUB WATER PUMPS</div>
+        <div class="card-tags">
+          <span class="tag">CORPORATE</span>
+          <span class="tag">WEB</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="cyber-panel project-card project-case" data-case="case-psih">
+      <div class="card-thumb card-thumb--psih">
+        <span class="card-thumb-label">ПСИХОГОЛИК</span>
+      </div>
+      <div class="card-body">
+        <div class="card-num">// 004</div>
+        <div class="card-title">ПСИХОГОЛИК</div>
+        <div class="card-tags">
+          <span class="tag">UX</span>
+          <span class="tag">WEB</span>
+        </div>
+        <div class="card-case-hint">// ЧИТАТЬ КЕЙС →</div>
+      </div>
+    </div>
+
+    <div class="cyber-panel project-card project-case" data-case="case-imax">
+      <div class="card-thumb card-thumb--imax">
+        <span class="card-thumb-label">IMAX TATTOO</span>
+      </div>
+      <div class="card-body">
+        <div class="card-num">// 005</div>
+        <div class="card-title">IMAX TATTOO</div>
+        <div class="card-tags">
+          <span class="tag">BRANDING</span>
+          <span class="tag">WEB</span>
+        </div>
+        <div class="card-case-hint">// ЧИТАТЬ КЕЙС →</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     ○ ОБО МНЕ
+══════════════════════════════ -->
+<section class="cyber-section" id="about">
+  <div class="section-header">
+    <div class="section-btn-icon">○</div>
+    <h2 class="section-title">ОБО МНЕ</h2>
+    <div class="section-divider"></div>
+    <span class="section-code">CI_02</span>
+  </div>
+
+  <div class="about-layout">
+
+    <!-- Фото -->
+    <div class="about-photo-wrap cyber-panel">
+      <img src="image/my-photo-about-me.jpg" alt="Евгения Максимова" class="about-photo">
+      <div class="about-photo-scan"></div>
+      <span class="about-photo-corner apc-tl"></span>
+      <span class="about-photo-corner apc-tr"></span>
+      <span class="about-photo-corner apc-bl"></span>
+      <span class="about-photo-corner apc-br"></span>
+      <div class="about-photo-label">// THMJAY.JPG</div>
+    </div>
+
+    <!-- Текст + навыки + статы -->
+    <div class="about-right">
+      <div class="cyber-panel">
+        <p class="about-bio">
+          Привет, я <span>Евгения</span> — UI/UX дизайнер с фокусом на
+          цифровые продукты и визуальную идентику. Создаю интерфейсы,
+          которые <span>чувствуются как живые</span> — с характером,
+          логикой и вниманием к деталям.
+        </p>
+        <div class="skills-list">
+          <span class="skill-tag">FIGMA</span>
+          <span class="skill-tag">UI DESIGN</span>
+          <span class="skill-tag">UX RESEARCH</span>
+          <span class="skill-tag">PROTOTYPING</span>
+          <span class="skill-tag">AFTER EFFECTS</span>
+          <span class="skill-tag">BRANDING</span>
+          <span class="skill-tag">CSS / HTML</span>
+          <span class="skill-tag">MOTION</span>
+        </div>
+        <a href="about.html" class="about-more-link">// ПОДРОБНЕЕ ОБО МНЕ →</a>
+      </div>
+
+      <div class="cyber-panel">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num" data-count="3" data-suffix="+">3+</div>
+            <div class="stat-label">ГОДА ОПЫТА</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-count="20" data-suffix="+">20+</div>
+            <div class="stat-label">ПРОЕКТОВ</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">ИДЕЙ</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">01</div>
+            <div class="stat-label">ДИЗАЙНЕР</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     △ УСЛУГИ
+══════════════════════════════ -->
+<section class="services-bg-section" id="services">
+  <canvas id="iso-canvas-svc"></canvas>
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-btn-icon">△</div>
+      <h2 class="section-title">УСЛУГИ</h2>
+      <div class="section-divider"></div>
+      <span class="section-code">TR_03</span>
+    </div>
+
+    <div class="services-grid">
+      <div class="cyber-panel service-card">
+        <span class="service-icon">◈</span>
+        <div class="service-name">UI DESIGN</div>
+        <p class="service-desc">Дизайн интерфейсов — от концепции до финального макета. Чистая визуальная система.</p>
+      </div>
+      <div class="cyber-panel service-card">
+        <span class="service-icon">◉</span>
+        <div class="service-name">UX RESEARCH</div>
+        <p class="service-desc">Исследования, CJM, анализ пользователей. Дизайн, основанный на данных.</p>
+      </div>
+      <div class="cyber-panel service-card">
+        <span class="service-icon">◬</span>
+        <div class="service-name">BRANDING</div>
+        <p class="service-desc">Визуальная идентика бренда — лого, палитра, типографика, гайдлайн.</p>
+      </div>
+      <div class="cyber-panel service-card">
+        <span class="service-icon">◈</span>
+        <div class="service-name">MOTION</div>
+        <p class="service-desc">Анимация интерфейсов и моушн-графика. Жизнь в каждом пикселе.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     ◈ ОТЗЫВЫ
+══════════════════════════════ -->
+<section class="cyber-section" id="reviews">
+  <div class="section-header">
+    <div class="section-btn-icon">◈</div>
+    <h2 class="section-title">ОТЗЫВЫ</h2>
+    <div class="section-divider"></div>
+    <span class="section-code">RV_04</span>
+  </div>
+
+  <div class="reviews-ticker-wrap">
+    <div class="reviews-ticker" id="reviews-ticker">
+
+      <div class="rv-card">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">Евгения полностью погрузилась в проект — предложила решения, о которых мы сами не думали. Дизайн получился современным и при этом очень понятным для пользователей.</p>
+        <div class="rv-author">
+          <span class="rv-name">Лера Власова</span>
+          <span class="rv-role">ProAVA Club</span>
+        </div>
+        <div class="rv-stars">★★★★★</div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">Работали над редизайном сайта психологического центра. Женя очень тонко передала атмосферу — тепло, доверие, профессионализм. Клиенты стали дольше задерживаться на сайте.</p>
+        <div class="rv-author">
+          <span class="rv-name">Марина Д.</span>
+          <span class="rv-role">Психологический центр «Психоголик»</span>
+        </div>
+        <div class="rv-stars">★★★★★</div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">Сделала брендинг для тату-студии с нуля. Логотип, сайт, гайдлайн — всё в едином стиле. Очень быстро улавливает суть и воплощает именно то, что хочется.</p>
+        <div class="rv-author">
+          <span class="rv-name">Илья Максимов</span>
+          <span class="rv-role">IMAX Tattoo Studio</span>
+        </div>
+        <div class="rv-stars">★★★★★</div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">Отличный дизайнер — слышит задачу, предлагает варианты, объясняет решения. Дедлайны соблюдает строго. Буду обращаться снова.</p>
+        <div class="rv-author">
+          <span class="rv-name">Ярослава Шушина</span>
+          <span class="rv-role">Персональный бренд</span>
+        </div>
+        <div class="rv-stars">★★★★★</div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-quote">"</div>
+        <p class="rv-text">Евгения разработала UX для нашего спортивного приложения. Логика навигации стала намного чище, пользователи перестали теряться. Рекомендую как специалиста.</p>
+        <div class="rv-author">
+          <span class="rv-name">Максим Никитин</span>
+          <span class="rv-role">Sportova App</span>
+        </div>
+        <div class="rv-stars">★★★★★</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     ✕ СВЯЗЬ СО МНОЙ
+══════════════════════════════ -->
+<section class="cyber-section" id="contact">
+  <div class="section-header">
+    <div class="section-btn-icon">✕</div>
+    <h2 class="section-title">СВЯЗЬ СО МНОЙ</h2>
+    <div class="section-divider"></div>
+    <span class="section-code">CR_04</span>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="cyber-panel">
+      <div class="social-links">
+
+        <a href="https://t.me/mjay_design" target="_blank" class="social-item social-tg">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.032 9.565c-.148.658-.538.818-1.09.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 14.7l-2.95-.924c-.642-.2-.655-.642.136-.95l11.526-4.445c.537-.194 1.006.131.66.867z"/></svg>
+          <div>
+            <div class="social-platform">TELEGRAM</div>
+            <div class="social-handle">@mjay_design</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="https://wa.me/996709777699" target="_blank" class="social-item social-wa">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.38 1.25 4.79L2.05 22l5.43-1.42c1.35.73 2.89 1.14 4.56 1.14 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.16c-1.5 0-2.92-.4-4.14-1.1l-.3-.17-3.07.8.82-3-.19-.31a8.25 8.25 0 01-1.28-4.37c0-4.54 3.7-8.24 8.24-8.24s8.24 3.7 8.24 8.24-3.7 8.15-8.32 8.15zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.22-.08-.39-.12-.55.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.55-1.33-.76-1.82c-.2-.48-.4-.41-.55-.42h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+          <div>
+            <div class="social-platform">WHATSAPP</div>
+            <div class="social-handle">+996 709 777 699</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="https://www.instagram.com/mjay.design_/" target="_blank" class="social-item social-ig">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <div>
+            <div class="social-platform">INSTAGRAM</div>
+            <div class="social-handle">@mjay.design_</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="https://vk.com/nikitinajv" target="_blank" class="social-item social-vk">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.169.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.762-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .779.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.474-.085.712-.576.712z"/></svg>
+          <div>
+            <div class="social-platform">ВК</div>
+            <div class="social-handle">vk.com/nikitinajv</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="mailto:evgeniyamaksimova0717@gmail.com" class="social-item social-mail">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <div>
+            <div class="social-platform">EMAIL</div>
+            <div class="social-handle">evgeniyamaksimova0717@gmail.com</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/evgeniya-maksimova-7b70173b8/" target="_blank" class="social-item social-li">
+          <svg class="social-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <div>
+            <div class="social-platform">LINKEDIN</div>
+            <div class="social-handle">Evgeniya Maksimova</div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+      </div>
+      <a href="https://t.me/mjay_design" target="_blank" class="neon-btn">НАПИСАТЬ В TELEGRAM</a>
+    </div>
+
+    <div class="cyber-panel">
+      <p class="contact-note">
+        Открыта для новых проектов, коллабораций и интересных задач.<br><br>
+        Если у тебя есть идея — давай её реализуем.
+        Пишу обычно в течение дня.
+      </p>
+      <p class="contact-note" style="margin-top:20px; font-size:10px; opacity:0.35; letter-spacing:2px;">
+        // ДОСТУПНА ДЛЯ ФРИЛАНСА<br>
+        // LOCATION: KG / REMOTE
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="footer-logo">THMJAY</div>
+      <div class="footer-tagline">ЕВГЕНИЯ МАКСИМОВА · UI/UX DESIGNER</div>
+      <div class="footer-socials">
+      <a href="https://t.me/mjay_design" target="_blank" class="footer-soc" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.032 9.565c-.148.658-.538.818-1.09.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 14.7l-2.95-.924c-.642-.2-.655-.642.136-.95l11.526-4.445c.537-.194 1.006.131.66.867z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/mjay.design_/" target="_blank" class="footer-soc" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://vk.com/nikitinajv" target="_blank" class="footer-soc" title="ВК">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.169.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.762-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .779.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.474-.085.712-.576.712z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/evgeniya-maksimova-7b70173b8/" target="_blank" class="footer-soc" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:evgeniyamaksimova0717@gmail.com" class="footer-soc" title="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+    </div>
+
+    <div class="footer-spacer"></div>
+
+    <div class="footer-copy">
+      <span class="footer-sys">SYS::EOF</span>
+      <span class="footer-bar"><span class="footer-bar-fill"></span></span>
+      <span class="footer-year">© 2025 THMJAY</span>
+    </div>
+
+  </div>
+  <div class="footer-line"></div>
+</footer>
+
+<!-- ══════════════════════════════
+     КЕЙС-МОДАЛКИ
+══════════════════════════════ -->
+
+<!-- Кейс 1: PROAVA -->
+<div class="case-overlay" id="case-proava">
+  <div class="case-panel">
+    <button class="case-close" data-close>✕</button>
+    <div class="case-meta">
+      <span class="case-num">// 001</span>
+      <span class="case-tags"><span class="tag">UI DESIGN</span><span class="tag">LANDING</span></span>
+    </div>
+    <h2 class="case-title">ПроАВА КЛУБ</h2>
+    <p class="case-sub">Сайт для поведенческого аналитика — личный бренд + курсы</p>
+
+    <div class="case-tabs">
+      <button class="case-tab active" data-tab="task">ЗАДАЧА</button>
+      <button class="case-tab" data-tab="solution">РЕШЕНИЕ</button>
+      <button class="case-tab" data-tab="result">РЕЗУЛЬТАТ</button>
+    </div>
+
+    <div class="case-content active" data-content="task">
+      <p>Создать сайт, который одновременно:</p>
+      <ul>
+        <li>Презентует специалиста как эксперта</li>
+        <li>Отражает её личность и стиль</li>
+        <li>Помогает продавать курсы и услуги</li>
+      </ul>
+      <p>Клиент — поведенческий аналитик, работающий с детьми. Важно было передать баланс: <span class="hl">мягкость и эмпатию</span> + строгость, профессионализм и чёткость.</p>
+    </div>
+    <div class="case-content" data-content="solution">
+      <p>Структура сайта выстроена так, чтобы пользователь постепенно знакомился со специалистом: от визуального восприятия → к доверию → к продуктам.</p>
+      <ul>
+        <li>Разработана понятная структура страниц</li>
+        <li>Создан дизайн в <span class="hl">розово-жёлтой гамме</span>, отражающий характер клиента</li>
+        <li>Внедрён фирменный элемент — персонаж (единорог) как часть личного бренда</li>
+        <li>Добавлены анимации — движение персонажа, микро-взаимодействия</li>
+        <li>Каждая секция усиливает ощущение «мягко, но профессионально»</li>
+      </ul>
+    </div>
+    <div class="case-content" data-content="result">
+      <ul>
+        <li>Сайт получился <span class="hl">узнаваемым и персонализированным</span></li>
+        <li>Визуал усиливает доверие и запоминаемость</li>
+        <li>Клиент получил инструмент для презентации себя и своих продуктов</li>
+      </ul>
+    </div>
+
+    <a href="https://lera-proaut.ru/pro%D0%90%D0%92%D0%90club" target="_blank" class="case-site-btn">ОТКРЫТЬ САЙТ →</a>
+  </div>
+</div>
+
+<!-- Кейс 2: ПСИХОГОЛИК -->
+<div class="case-overlay" id="case-psih">
+  <div class="case-panel">
+    <button class="case-close" data-close>✕</button>
+    <div class="case-meta">
+      <span class="case-num">// 004</span>
+      <span class="case-tags"><span class="tag">UX</span><span class="tag">WEB</span></span>
+    </div>
+    <h2 class="case-title">ПСИХОГОЛИК</h2>
+    <p class="case-sub">Лендинг для групповой встречи — психологическое сообщество</p>
+
+    <div class="case-tabs">
+      <button class="case-tab active" data-tab="task">ЗАДАЧА</button>
+      <button class="case-tab" data-tab="solution">РЕШЕНИЕ</button>
+      <button class="case-tab" data-tab="result">РЕЗУЛЬТАТ</button>
+    </div>
+
+    <div class="case-content active" data-content="task">
+      <p>Создать страницу, на которой пользователь сразу понимает:</p>
+      <ul>
+        <li>Что это за формат (групповые встречи)</li>
+        <li>Кому это подходит</li>
+        <li>Какую ценность он получит</li>
+      </ul>
+      <p>Важно было передать атмосферу: <span class="hl">поддержка, безопасность</span>, ощущение «мы не одни».</p>
+    </div>
+    <div class="case-content" data-content="solution">
+      <ul>
+        <li>Выстроена чёткая и логичная структура лендинга</li>
+        <li>Выбран <span class="hl">спокойный серо-голубой</span> цвет, создающий ощущение доверия</li>
+        <li>Добавлены иллюстрации, отражающие идею круга и общения</li>
+        <li>Разработаны анимации (движение элементов по кругу), усиливающие смысл</li>
+        <li>Создана визуальная айдентика — иконки, стиль блоков</li>
+      </ul>
+    </div>
+    <div class="case-content" data-content="result">
+      <ul>
+        <li>Страница быстро <span class="hl">объясняет суть продукта</span></li>
+        <li>Создаёт правильное эмоциональное состояние у пользователя</li>
+        <li>Усиливает вовлечённость и доверие</li>
+      </ul>
+    </div>
+
+    <a href="https://psihogolik.getcourse.ru/psihogolik.me" target="_blank" class="case-site-btn">ОТКРЫТЬ САЙТ →</a>
+  </div>
+</div>
+
+<!-- Кейс 3: IMAX TATTOO -->
+<div class="case-overlay" id="case-imax">
+  <div class="case-panel">
+    <button class="case-close" data-close>✕</button>
+    <div class="case-meta">
+      <span class="case-num">// 005</span>
+      <span class="case-tags"><span class="tag">BRANDING</span><span class="tag">WEB</span></span>
+    </div>
+    <h2 class="case-title">IMAX TATTOO</h2>
+    <p class="case-sub">Сайт-портфолио для тату-мастера</p>
+
+    <div class="case-tabs">
+      <button class="case-tab active" data-tab="task">ЗАДАЧА</button>
+      <button class="case-tab" data-tab="solution">РЕШЕНИЕ</button>
+      <button class="case-tab" data-tab="result">РЕЗУЛЬТАТ</button>
+    </div>
+
+    <div class="case-content active" data-content="task">
+      <p>Создать сайт, который:</p>
+      <ul>
+        <li>Презентует мастера и его стиль</li>
+        <li>Показывает портфолио</li>
+        <li>Подчёркивает мобильность — работа в разных странах</li>
+        <li>Привлекает новых клиентов и сотрудничество</li>
+      </ul>
+    </div>
+    <div class="case-content" data-content="solution">
+      <ul>
+        <li>Разработана структура с <span class="hl">акцентом на визуал и работы</span></li>
+        <li>Оформлен блок портфолио с удобной навигацией</li>
+        <li>Продуман стиль, соответствующий сфере тату</li>
+        <li>Добавлены акценты на личный бренд мастера</li>
+        <li>Интегрирована информация о географии работы</li>
+      </ul>
+    </div>
+    <div class="case-content" data-content="result">
+      <ul>
+        <li>Сайт работает как <span class="hl">витрина и личная презентация</span></li>
+        <li>Усиливает доверие к мастеру</li>
+        <li>Помогает привлекать клиентов и новые проекты</li>
+      </ul>
+    </div>
+
+    <a href="https://www.imaxtattoo.com/" target="_blank" class="case-site-btn">ОТКРЫТЬ САЙТ →</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     МИНИ-ИГРА — ARCADE MODE
+══════════════════════════════ -->
+<div class="arcade-overlay" id="arcade-overlay">
+  <div class="arcade-panel">
+    <button class="arcade-close" id="arcade-close">✕</button>
+
+    <div class="arcade-head">// ARCADE_MODE</div>
+    <div class="arcade-title">BUTTON RUSH</div>
+
+    <div class="arcade-hud">
+      <div class="arcade-hud-block">
+        <span>SCORE</span>
+        <strong id="arc-score">0</strong>
+      </div>
+      <div class="arcade-hud-block" style="text-align:center">
+        <span>COMBO</span>
+        <strong id="arc-combo">×1</strong>
+      </div>
+      <div class="arcade-hud-block" style="text-align:right">
+        <span>LIVES</span>
+        <div class="arcade-lives" id="arc-lives">♥ ♥ ♥</div>
+      </div>
+    </div>
+
+    <div class="arcade-timer-bar">
+      <div class="arcade-timer-fill" id="arc-timer"></div>
+    </div>
+
+    <div class="arcade-msg" id="arc-msg"></div>
+
+    <!-- Кнопки PS-раскладка: △ сверху, □ слева, ○ справа, ✕ снизу -->
+    <div class="arcade-buttons" id="arc-btns">
+      <div class="arcade-btn" id="ab-tr" style="top:0;   left:50%; transform:translateX(-50%)"><span class="btn-sym">△</span><span class="btn-key">W</span></div>
+      <div class="arcade-btn" id="ab-sq" style="top:50%; left:0;   transform:translateY(-50%)"><span class="btn-sym">□</span><span class="btn-key">A</span></div>
+      <div class="arcade-btn" id="ab-ci" style="top:50%; right:0;  transform:translateY(-50%)"><span class="btn-sym">○</span><span class="btn-key">D</span></div>
+      <div class="arcade-btn" id="ab-cr" style="bottom:0;left:50%; transform:translateX(-50%)"><span class="btn-sym">✕</span><span class="btn-key">S</span></div>
+    </div>
+
+    <!-- Game Over экран -->
+    <div class="arcade-gameover" id="arc-gameover">
+      <div class="arcade-gameover-title">GAME OVER</div>
+      <div class="arcade-gameover-score" id="arc-final-score"></div>
+      <div class="arcade-gameover-best"  id="arc-best-score"></div>
+      <button class="arcade-restart" id="arc-restart">↺ СНОВА</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ UI EXTRAS ══ -->
+<div id="scroll-progress"></div>
+<div id="custom-cursor"><div id="cursor-dot"></div><div id="cursor-ring"></div></div>
+<canvas id="trail-canvas"></canvas>
+<div id="data-sidebar"><canvas id="data-canvas"></canvas></div>
+<div id="konami-flash"></div>
+
+<div id="controller-hint">// ПОТЫКАЙ ДЖОЙСТИК</div>
+<div id="controller-wrap">
+<svg width="627" height="440" viewBox="0 0 627 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="joystick_svg">
+    <g id="body">
+      <g id="the-bottommost-layer-of-shadow-is-violet">
+        <path d="M66.3708 397.166C62.3422 413.007 44.5492 417.792 36.1562 418.205C40.1849 438.996 67.2101 437.594 80.2191 434.293C94.4871 428.931 124.786 403.601 131.836 345.188C138.886 286.774 175.059 272.996 192.265 273.408H314.382V126.136C285.426 126.136 234.471 102.117 216.185 112.523C192.265 126.135 189.747 131.086 149.461 180.59C109.175 230.093 71.4066 377.365 66.3708 397.166Z" fill="#52446D"/>
+        <path d="M558.616 397.166C562.645 413.007 580.438 417.792 588.831 418.205C584.802 438.996 557.777 437.594 544.768 434.293C530.5 428.931 500.201 403.601 493.151 345.188C486.101 286.774 449.928 272.995 432.722 273.408H310.605V126.136C339.561 126.136 384.898 107.939 405.026 113.759C447.83 126.136 435.24 131.086 475.526 180.59C515.812 230.093 553.58 377.365 558.616 397.166Z" fill="#52446D"/>
+      </g>
+      <g id="central-base">
+        <path d="M28.4081 420.53C12.5 401.1 1.49985 343.057 1.5 326.285C1.50044 279.033 16.6575 149.36 47 91.4997C82.104 24.5594 56.5003 57.8746 96.5 27.9997C141.448 -5.57111 178.629 19.2645 175.616 11.2138H206.607C205.746 36.2134 198.601 90.2804 213.063 106.551C227.526 122.822 284.085 120.534 313.784 120.534V271.803H188.529C170.881 271.379 133.778 285.532 126.547 345.531C119.315 405.53 88.2381 431.547 73.6034 437.055C60.26 440.445 32.5402 441.885 28.4081 420.53Z" fill="black"/>
+        <path d="M597.376 420.097C588.768 419.673 570.518 414.758 566.385 398.487C561.22 378.148 522.481 226.879 481.16 176.033C439.838 125.186 423.052 121.372 432.091 78.1526C439.322 43.5769 447.156 18.8315 450.169 10.7808H421.76C422.621 35.7804 423.31 91.1186 408.847 107.39C394.385 123.66 341.7 120.101 312 120.101V271.37H437.256C454.904 270.946 492.007 285.099 499.238 345.098C506.469 405.097 537.546 431.114 552.181 436.622C565.524 440.012 593.244 441.452 597.376 420.097Z" fill="black"/>
+      </g>
+      <g id="triggers">
+        <path id="l-1" d="M77 29.3685C92.5296 15.5827 130.577 -7.85306 158.53 8.68984C186.484 25.2327 167.589 32.8148 154.648 34.5379L77 41V29.3685Z" fill="black"/>
+        <path id="r-1" d="M548 26.3685C532.47 12.5827 494.423 -10.8531 466.47 5.68984C438.516 22.2327 457.411 29.8148 470.352 31.5379L548 38V26.3685Z" fill="black"/>
+      </g>
+      <path id="shadow-under-the-right-panel" d="M533.761 388.792C533.473 388.905 515.135 211.799 457.127 192.578C399.118 173.356 388.603 65.054 388.891 64.9411C388.412 42.1647 464.476 121.96 504.481 211.389C544.486 300.818 534.049 388.679 533.761 388.792Z" fill="url(#paint0_radial_20_428)" fill-opacity="0.2"/>
+      <g id="top-panel">
+        <g id="top-panel-right">
+          <path d="M29.7058 431C19.3865 422.826 -0.994185 389.957 0.0377516 323.875C1.32767 241.272 7.77726 196.099 16.8067 162.541C25.8361 128.984 43.8948 52.8346 77.4328 32.184C110.971 11.5333 158.885 -1.04635 175.466 10.2426C188.328 18.9987 204.186 87.4066 197.357 110.639C190.908 132.58 153.5 177.753 139.349 199.971C131.234 212.71 108.391 242.563 92.9118 300.643C77.4327 358.723 65.8236 415.512 55.5042 423.256C47.2487 429.451 34.8655 431 29.7058 431Z" fill="#33254D"/>
+          <path d="M29.7058 431C19.3865 422.826 -0.994185 389.957 0.0377516 323.875C1.32767 241.272 7.77726 196.099 16.8067 162.541C25.8361 128.984 43.8948 52.8346 77.4328 32.184C110.971 11.5333 158.885 -1.04635 175.466 10.2426C188.328 18.9987 204.186 87.4066 197.357 110.639C190.908 132.58 153.5 177.753 139.349 199.971C131.234 212.71 108.391 242.563 92.9118 300.643C77.4327 358.723 65.8236 415.512 55.5042 423.256C47.2487 429.451 34.8655 431 29.7058 431Z" fill="url(#paint1_linear_20_428)" fill-opacity="0.2"/>
+        </g>
+        <g id="top-panel-left">
+          <path d="M596.904 428.77C607.157 420.496 627.251 387.421 625.599 321.32C623.535 238.692 616.656 193.559 607.303 160.072C597.95 126.584 579.16 50.5702 545.394 30.2245C511.628 9.87885 461.685 -1.22341 446.785 12.4383C431.293 26.6444 421.35 87.456 424.743 108.835C428.708 133.819 476.458 186.187 484.985 198.666C497.146 216.462 516.374 240.986 532.413 298.947C548.451 356.908 560.604 413.614 571.006 421.264C579.328 427.385 591.739 428.819 596.904 428.77Z" fill="#33254D"/>
+          <path d="M596.904 428.77C607.157 420.496 627.251 387.421 625.599 321.32C623.535 238.692 616.656 193.559 607.303 160.072C597.95 126.584 579.16 50.5702 545.394 30.2245C511.628 9.87885 461.685 -1.22341 446.785 12.4383C431.293 26.6444 421.35 87.456 424.743 108.835C428.708 133.819 476.458 186.187 484.985 198.666C497.146 216.462 516.374 240.986 532.413 298.947C548.451 356.908 560.604 413.614 571.006 421.264C579.328 427.385 591.739 428.819 596.904 428.77Z" fill="url(#paint2_linear_20_428)" fill-opacity="0.2"/>
+        </g>
+      </g>
+      <g id="menu-button-l">
+        <path d="M447.556 26.2392C448.389 23.8979 450.963 22.676 453.305 23.5098C455.646 24.3437 456.868 26.9176 456.034 29.2588L448.988 49.0415C448.154 51.3827 445.58 52.6047 443.239 51.7709C440.898 50.937 439.676 48.3631 440.51 46.0219L447.556 26.2392Z" fill="#302741" fill-opacity="0.36"/>
+        <path d="M453.137 23.9808C455.218 24.722 456.304 27.0099 455.563 29.091L448.517 48.8738C447.776 50.9549 445.488 52.041 443.407 51.2998C441.326 50.5586 440.24 48.2707 440.981 46.1896L448.027 26.4069C448.768 24.3258 451.056 23.2396 453.137 23.9808Z" stroke="black" stroke-opacity="0.28"/>
+      </g>
+      <g id="options-button-r">
+        <path d="M162.974 25.7568C162 23.4703 163.065 20.8272 165.351 19.8532C167.638 18.8793 170.281 19.9434 171.255 22.2299L179.484 41.5502C180.458 43.8367 179.394 46.4798 177.107 47.4538C174.821 48.4277 172.178 47.3636 171.204 45.0771L162.974 25.7568Z" fill="#302741" fill-opacity="0.36"/>
+        <path d="M165.547 20.3133C167.579 19.4475 169.929 20.3934 170.795 22.4258L179.024 41.7462C179.89 43.7786 178.944 46.128 176.911 46.9938C174.879 47.8595 172.53 46.9136 171.664 44.8812L163.434 25.5608C162.569 23.5284 163.515 21.179 165.547 20.3133Z" stroke="black" stroke-opacity="0.28"/>
+      </g>
+      <g id="micro">
+        <circle id="micro9" cx="300" cy="151" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro8" cx="306" cy="151" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro7" cx="303" cy="157" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro6" cx="312" cy="151" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro5" cx="309" cy="157" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro4" cx="318" cy="151" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro3" cx="315" cy="157" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro2" cx="324" cy="151" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+        <circle id="micro1" cx="321" cy="157" r="2" fill="#D9D9D9" fill-opacity="0.64"/>
+      </g>
+      <rect id="glowing-microphone-button" x="292" y="246" width="42" height="10" rx="5" fill="#A19898" fill-opacity="0.2"/>
+      <g id="touchpad-up">
+        <path d="M196.054 26.8957C195.622 20.9305 197.606 9 208.992 9H419.884C422.471 10.7044 427.905 16.6696 428.94 26.8957C429.975 37.1219 417.296 88.2526 410.827 112.54C409.533 118.079 401.77 129.413 381.069 130.435C360.368 131.458 274.976 130.861 234.868 130.435C228.399 130.861 214.167 127.879 208.992 112.54C203.816 97.2004 198.21 49.0524 196.054 26.8957Z" fill="#33254D"/>
+        <path d="M196.054 26.8957C195.622 20.9305 197.606 9 208.992 9H419.884C422.471 10.7044 427.905 16.6696 428.94 26.8957C429.975 37.1219 417.296 88.2526 410.827 112.54C409.533 118.079 401.77 129.413 381.069 130.435C360.368 131.458 274.976 130.861 234.868 130.435C228.399 130.861 214.167 127.879 208.992 112.54C203.816 97.2004 198.21 49.0524 196.054 26.8957Z" fill="url(#paint3_linear_20_428)" fill-opacity="0.2"/>
+      </g>
+      <ellipse id="shadow-touchpad-up-liner" cx="313.513" cy="17.4029" rx="107.511" ry="1.8" transform="rotate(-0.228881 313.513 17.4029)"
+        fill="url(#liner-gradient)" opacity="0.85"/>
+      <!-- Кнопка PLAY на тачпаде -->
+      <g id="touchpad-play" style="cursor:pointer">
+        <rect x="275" y="55" width="76" height="22" rx="11"
+          fill="rgba(82,68,109,0.6)" stroke="rgba(199,154,205,0.5)" stroke-width="1"/>
+        <text x="313" y="70"
+          text-anchor="middle" dominant-baseline="middle"
+          font-family="Orbitron, sans-serif" font-size="8.5"
+          letter-spacing="2" fill="rgba(199,154,205,0.9)">▶ PLAY</text>
+      </g>
+    </g>
+    <g id="right-stick">
+      <ellipse id="bottommost-layer-stick-shadow-right" cx="397.5" cy="227.5" rx="54.5" ry="45.5" fill="url(#paint4_linear_20_428)"/>
+      <g id="bottom-layer-right-stick-circle">
+        <circle cx="397" cy="209" r="44" fill="#2B2B2B"/>
+        <circle cx="397" cy="209" r="44" fill="url(#paint5_linear_20_428)" fill-opacity="0.2"/>
+      </g>
+      <g id="right-stick-shadow-footrest">
+        <circle cx="396.5" cy="208.5" r="39.5" fill="#222121"/>
+        <circle cx="396.5" cy="208.5" r="39.5" fill="url(#paint6_radial_20_428)" fill-opacity="0.2"/>
+      </g>
+      <g id="right-stick-stem">
+        <circle cx="397" cy="208" r="30" fill="#050505"/>
+        <circle cx="397" cy="208" r="30" fill="url(#paint7_radial_20_428)" fill-opacity="0.37"/>
+        <circle cx="397" cy="208" r="30.5" stroke="black" stroke-opacity="0.17"/>
+      </g>
+      <circle id="circle-day-under-the-moving-circle-of-the-right-stick" cx="398" cy="208" r="25" stroke="black"/>
+      <g id="right-stick-moving-circle">
+        <circle cx="398" cy="208" r="24" fill="#242323" fill-opacity="0.7"/>
+        <circle cx="398" cy="208" r="24" fill="url(#paint8_linear_20_428)" fill-opacity="0.2"/>
+      </g>
+      <circle id="right-stick-glare" cx="405.5" cy="198.5" r="2.5" fill="#959393"/>
+    </g>
+    <g id="left-stick">
+      <ellipse id="bottommost-layer-stick-shadow-left" cx="228.5" cy="227.5" rx="54.5" ry="45.5" fill="url(#paint9_linear_20_428)"/>
+      <g id="bottom-layer-left-stick-circle">
+        <circle cx="228" cy="209" r="44" fill="#2B2B2B"/>
+        <circle cx="228" cy="209" r="44" fill="url(#paint10_linear_20_428)" fill-opacity="0.2"/>
+      </g>
+      <g id="left-stick-shadow-footrest">
+        <circle cx="227.5" cy="208.5" r="39.5" fill="#222121"/>
+        <circle cx="227.5" cy="208.5" r="39.5" fill="url(#paint11_radial_20_428)" fill-opacity="0.2"/>
+      </g>
+      <g id="left-stick-stem">
+        <circle cx="228" cy="208" r="30" fill="#050505"/>
+        <circle cx="228" cy="208" r="30" fill="url(#paint12_radial_20_428)" fill-opacity="0.37"/>
+        <circle cx="228" cy="208" r="30.5" stroke="black" stroke-opacity="0.17"/>
+      </g>
+      <circle id="circle-day-under-the-moving-circle-of-the-left-stick" cx="229" cy="208" r="25" stroke="black"/>
+      <g id="left-stick-moving-circle">
+        <circle cx="229" cy="208" r="24" fill="#242323" fill-opacity="0.7"/>
+        <circle cx="229" cy="208" r="24" fill="url(#paint13_linear_20_428)" fill-opacity="0.2"/>
+      </g>
+      <circle id="left-stick-glare" cx="236.5" cy="198.5" r="2.5" fill="#959393"/>
+    </g>
+    <g id="square">
+      <g id="square-button-shadow">
+        <circle cx="465" cy="80" r="18" fill="black" style="mix-blend-mode:hard-light"/>
+      </g>
+      <rect id="icon-square" x="455.5" y="68.5" width="19" height="19" stroke="white"/>
+      <circle id="warp-icon-square" cx="465" cy="78" r="18" fill="url(#paint14_radial_20_428)" fill-opacity="0.2"/>
+      <circle id="glass-square" cx="465" cy="78" r="18" fill="url(#paint15_linear_20_428)" fill-opacity="0.35"/>
+    </g>
+    <g id="circle">
+      <g id="circle-button-shadow">
+        <circle cx="538" cy="80" r="18" fill="black" style="mix-blend-mode:hard-light"/>
+      </g>
+      <circle id="warp-circle-button-shadow" cx="538" cy="78" r="18" fill="url(#paint16_radial_20_428)" fill-opacity="0.2"/>
+      <circle id="icon-circle" cx="538" cy="78" r="12.5" stroke="#E9E5F2"/>
+      <circle id="glass-circle" cx="538" cy="78" r="18" fill="url(#paint17_linear_20_428)" fill-opacity="0.35"/>
+    </g>
+    <g id="triangle">
+      <g id="triangle-button-shadow">
+        <circle cx="501" cy="49" r="18" fill="black" style="mix-blend-mode:hard-light"/>
+      </g>
+      <path id="triangle_2" d="M511.437 54.25H490.563L501 34.0869L511.437 54.25Z" stroke="white"/>
+      <circle id="warp-triangle-button-shadow" cx="501" cy="46" r="18" fill="url(#paint18_radial_20_428)" fill-opacity="0.2"/>
+      <circle id="glass-triangle" cx="501" cy="46" r="18" fill="url(#paint19_linear_20_428)" fill-opacity="0.35"/>
+    </g>
+    <g id="cross">
+      <g id="cross-button-shadow">
+        <circle cx="501" cy="113" r="18" fill="black" style="mix-blend-mode:hard-light"/>
+      </g>
+      <circle id="warp-cross-button-shadow" cx="501" cy="111" r="18" fill="url(#paint20_radial_20_428)" fill-opacity="0.2"/>
+      <path id="cross_2" d="M491.021 102.454L511.682 120.533M510.458 100.602L491.045 120.014" stroke="white"/>
+      <circle id="glass-cross" cx="501" cy="111" r="18" fill="url(#paint21_linear_20_428)" fill-opacity="0.35"/>
+    </g>
+    <g id="mini-arrow-bottom">
+      <path id="arrow-bottom-shadow" d="M131 126C131.552 126 132 125.552 132 125V100.268C132 100.092 131.955 99.9218 131.867 99.7699C128.868 94.5732 124.434 87 120 87C115.618 87 111.235 96.0418 108.238 99.7162C108.086 99.9025 108 100.132 108 100.373V125C108 125.552 108.448 126 109 126H131Z" fill="black"/>
+      <path id="wrap-arrow-bottom" d="M131 123C131.552 123 132 122.552 132 122V97.9405C132 97.7612 131.953 97.587 131.862 97.4328C128.863 92.3696 124.431 85 120 85C115.622 85 111.243 93.7933 108.247 97.38C108.09 97.5678 108 97.8019 108 98.0466V122C108 122.552 108.448 123 109 123H131Z" fill="url(#paint22_radial_20_428)" fill-opacity="0.2"/>
+      <path id="mini-arrow-bottom_2" d="M120 121L116.536 117.25L123.464 117.25L120 121Z" fill="#D9D9D9"/>
+      <path id="arrow-bottom-glass" d="M131 124C131.552 124 132 123.552 132 123V98.2678C132 98.0923 131.955 97.9218 131.867 97.7699C128.868 92.5732 124.434 85 120 85C115.618 85 111.235 94.0418 108.238 97.7162C108.086 97.9025 108 98.1323 108 98.3726V123C108 123.552 108.448 124 109 124H131Z" fill="url(#paint23_linear_20_428)" fill-opacity="0.34"/>
+    </g>
+    <g id="mini-arrow-left">
+      <path id="arrow-left-shadow" d="M77 94C77 94.5523 77.4477 95 78 95L102.742 95C102.911 95 103.076 94.958 103.224 94.8761C108.421 92.002 116 87.751 116 83.5C116 79.2984 106.951 75.0968 103.279 72.2247C103.096 72.081 102.872 72 102.639 72L78 72C77.4477 72 77 72.4477 77 73L77 94Z" fill="black"/>
+      <path id="wrap-arrow-left" d="M77 92C77 92.5523 77.4477 93 78 93L102.732 93C102.908 93 103.078 92.9549 103.23 92.8672C108.427 89.8682 116 85.4341 116 81C116 76.6175 106.958 72.2351 103.284 69.2381C103.098 69.0862 102.868 69 102.627 69L78 69C77.4477 69 77 69.4477 77 70L77 92Z" fill="url(#paint24_radial_20_428)" fill-opacity="0.2"/>
+      <path id="mini-arrow-left_2" d="M80 81L83.75 77.5359L83.75 84.4641L80 81Z" fill="#D9D9D9"/>
+      <path id="arrow-left-glass" d="M77 92C77 92.5523 77.4477 93 78 93L102.732 93C102.908 93 103.078 92.9549 103.23 92.8672C108.427 89.8682 116 85.4341 116 81C116 76.6175 106.958 72.2351 103.284 69.2381C103.098 69.0862 102.868 69 102.627 69L78 69C77.4477 69 77 69.4477 77 70L77 92Z" fill="url(#paint25_linear_20_428)" fill-opacity="0.34"/>
+    </g>
+    <g id="mini-arrow-right">
+      <path id="arrow-right-shadow" d="M163 73C163 72.4477 162.552 72 162 72L137.258 72C137.089 72 136.924 72.042 136.776 72.1239C131.579 74.998 124 79.249 124 83.5C124 87.7016 133.049 91.9032 136.721 94.7753C136.904 94.919 137.128 95 137.361 95L162 95C162.552 95 163 94.5523 163 94L163 73Z" fill="black"/>
+      <path id="wrap-arrow-right" d="M163 70C163 69.4477 162.552 69 162 69L137.268 69C137.092 69 136.922 69.0451 136.77 69.1328C131.573 72.1318 124 76.5659 124 81C124 85.3825 133.042 89.7649 136.716 92.7619C136.902 92.9138 137.132 93 137.373 93L162 93C162.552 93 163 92.5523 163 92L163 70Z" fill="url(#paint26_linear_20_428)" fill-opacity="0.34"/>
+      <path id="mini-arrow-right_2" d="M160 81L156.25 84.4641L156.25 77.5359L160 81Z" fill="#D9D9D9"/>
+      <path id="arrow-right-glass" d="M163 70C163 69.4477 162.552 69 162 69L137.268 69C137.092 69 136.922 69.0451 136.77 69.1328C131.573 72.1318 124 76.5659 124 81C124 85.3825 133.042 89.7649 136.716 92.7619C136.902 92.9138 137.132 93 137.373 93L162 93C162.552 93 163 92.5523 163 92L163 70Z" fill="url(#paint27_radial_20_428)" fill-opacity="0.2"/>
+    </g>
+    <g id="arrow-top-up">
+      <path id="arrow-top-shadow" d="M109 41C108.448 41 108 41.4477 108 42L108 66.7322C108 66.9077 108.045 67.0782 108.133 67.2301C111.132 72.4268 115.566 80 120 80C124.382 80 128.765 70.9582 131.762 67.2838C131.914 67.0975 132 66.8677 132 66.6274L132 42C132 41.4477 131.552 41 131 41L109 41Z" fill="black"/>
+      <path id="wrap-arrow-top" d="M109 38C108.448 38 108 38.4477 108 39L108 63.7322C108 63.9077 108.045 64.0782 108.133 64.2301C111.132 69.4268 115.566 77 120 77C124.382 77 128.765 67.9582 131.762 64.2838C131.914 64.0975 132 63.8677 132 63.6274L132 39C132 38.4477 131.552 38 131 38L109 38Z" fill="url(#paint28_radial_20_428)" fill-opacity="0.2"/>
+      <path id="mini-arrow-top" d="M120 41L123.464 44.75L116.536 44.75L120 41Z" fill="#D9D9D9"/>
+      <path id="arrow-top-glass" d="M109 38C108.448 38 108 38.4477 108 39L108 63.7322C108 63.9077 108.045 64.0782 108.133 64.2301C111.132 69.4268 115.566 77 120 77C124.382 77 128.765 67.9582 131.762 64.2838C131.914 64.0975 132 63.8677 132 63.6274L132 39C132 38.4477 131.552 38 131 38L109 38Z" fill="url(#paint29_linear_20_428)" fill-opacity="0.34"/>
+    </g>
+  </g>
+  <defs>
+    <!-- Liner — градиент блика -->
+    <linearGradient id="liner-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#33254D" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#C4BBD6" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#C4BBD6" stop-opacity="0.9"/>
+      <stop offset="1"   stop-color="#33254D" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="paint0_radial_20_428" cx="0" cy="0" r="1" gradientTransform="matrix(46.9367 291.224 -46.0318 7.31321 451.396 70.3858)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#959393"/>
+      <stop offset="1" stop-color="#2F2E2E"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear_20_428" x1="211.5" y1="-4.50001" x2="90" y2="218" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_20_428" x1="581" y1="80.5002" x2="491.5" y2="185" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="paint3_linear_20_428" x1="373.5" y1="-14.6129" x2="314.176" y2="131.68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4BBD6"/>
+      <stop offset="0.922601" stop-color="#33254D"/>
+    </linearGradient>
+    <linearGradient id="paint4_linear_20_428" x1="418" y1="235" x2="456" y2="257" gradientUnits="userSpaceOnUse">
+      <stop offset="0.438054" stop-color="#020202"/>
+      <stop offset="0.88508" stop-color="#171717"/>
+    </linearGradient>
+    <linearGradient id="paint5_linear_20_428" x1="397" y1="165" x2="397" y2="253" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#666666"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <radialGradient id="paint6_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(396.5 208.5) rotate(90) scale(39.5)">
+      <stop stop-color="#666666"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <radialGradient id="paint7_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(397 204.875) rotate(90) scale(22.5)">
+      <stop stop-color="#828080"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <linearGradient id="paint8_linear_20_428" x1="390.5" y1="229.5" x2="416" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0.427885"/>
+      <stop offset="1" stop-color="#CDC9C9"/>
+    </linearGradient>
+    <linearGradient id="paint9_linear_20_428" x1="249" y1="235" x2="287" y2="257" gradientUnits="userSpaceOnUse">
+      <stop offset="0.438054" stop-color="#020202"/>
+      <stop offset="0.88508" stop-color="#171717"/>
+    </linearGradient>
+    <linearGradient id="paint10_linear_20_428" x1="228" y1="165" x2="228" y2="253" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#666666"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <radialGradient id="paint11_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(227.5 208.5) rotate(90) scale(39.5)">
+      <stop stop-color="#666666"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <radialGradient id="paint12_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(228 204.875) rotate(90) scale(22.5)">
+      <stop stop-color="#828080"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <linearGradient id="paint13_linear_20_428" x1="221.5" y1="229.5" x2="247" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0.427885"/>
+      <stop offset="1" stop-color="#CDC9C9"/>
+    </linearGradient>
+    <radialGradient id="paint14_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(465 78) rotate(90) scale(18)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint15_linear_20_428" x1="465" y1="60" x2="465" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0.16" stop-color="#CFCBD7"/>
+      <stop offset="0.971154" stop-color="white"/>
+    </linearGradient>
+    <radialGradient id="paint16_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(538 78) rotate(90) scale(18)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint17_linear_20_428" x1="538" y1="60" x2="538" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0.16" stop-color="#CFCBD7"/>
+      <stop offset="0.971154" stop-color="white"/>
+    </linearGradient>
+    <radialGradient id="paint18_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(501 46) rotate(90) scale(18)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint19_linear_20_428" x1="501" y1="28" x2="501" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0.16" stop-color="#CFCBD7"/>
+      <stop offset="0.971154" stop-color="white"/>
+    </linearGradient>
+    <radialGradient id="paint20_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(501 111) rotate(90) scale(18)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint21_linear_20_428" x1="501" y1="93" x2="501" y2="129" gradientUnits="userSpaceOnUse">
+      <stop offset="0.16" stop-color="#CFCBD7"/>
+      <stop offset="0.971154" stop-color="white"/>
+    </linearGradient>
+    <radialGradient id="paint22_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120 104) rotate(90) scale(19 12)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint23_linear_20_428" x1="120" y1="124" x2="120" y2="85" gradientUnits="userSpaceOnUse">
+      <stop offset="0.240385" stop-color="white"/>
+      <stop offset="0.903846" stop-color="#999999"/>
+    </linearGradient>
+    <radialGradient id="paint24_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96.5 81) rotate(-180) scale(19.5 12)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint25_linear_20_428" x1="77" y1="81" x2="116" y2="81" gradientUnits="userSpaceOnUse">
+      <stop offset="0.240385" stop-color="white"/>
+      <stop offset="0.903846" stop-color="#999999"/>
+    </linearGradient>
+    <linearGradient id="paint26_linear_20_428" x1="163" y1="81" x2="124" y2="81" gradientUnits="userSpaceOnUse">
+      <stop offset="0.240385" stop-color="white"/>
+      <stop offset="0.903846" stop-color="#999999"/>
+    </linearGradient>
+    <radialGradient id="paint27_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(143.5 81) scale(19.5 12)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <radialGradient id="paint28_radial_20_428" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120 57.5) rotate(-90) scale(19.5 12)">
+      <stop offset="0.16" stop-color="#52446D"/>
+      <stop offset="0.971154" stop-color="#9F84D3"/>
+    </radialGradient>
+    <linearGradient id="paint29_linear_20_428" x1="120" y1="38" x2="120" y2="77" gradientUnits="userSpaceOnUse">
+      <stop offset="0.240385" stop-color="white"/>
+      <stop offset="0.903846" stop-color="#999999"/>
+    </linearGradient>
+  </defs>
+</svg>
+</div>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+  const controller  = document.querySelector('#controller-wrap')
+  const leftStick   = document.querySelector('#left-stick-moving-circle')
+  const rightStick  = document.querySelector('#right-stick-moving-circle')
+  const leftGlare   = document.querySelector('#left-stick-glare')
+  const rightGlare  = document.querySelector('#right-stick-glare')
+
+  const buttons = {
+    square:   { el: document.querySelector('#square'),   color: '#a78bfa' },
+    circle:   { el: document.querySelector('#circle'),   color: '#f87171' },
+    triangle: { el: document.querySelector('#triangle'), color: '#34d399' },
+    cross:    { el: document.querySelector('#cross'),    color: '#60a5fa' },
+  }
+
+  const dpadButtons = [
+    document.querySelector('#arrow-top-up'),
+    document.querySelector('#mini-arrow-bottom'),
+    document.querySelector('#mini-arrow-left'),
+    document.querySelector('#mini-arrow-right'),
+  ]
+
+  const micDots = document.querySelectorAll('[id^="micro"]')
+
+  // Инициализация позиции + перспектива
+  gsap.set(controller, {
+    xPercent: -50,
+    scale: 0.6,
+    transformOrigin: 'center bottom',
+    transformPerspective: 1600,
+  })
+
+  // ─────────────────────────────────────────
+  // 1. ДЫХАНИЕ + AMBIENT GLOW через GSAP
+  // ─────────────────────────────────────────
+  gsap.to(controller, {
+    y: -10,
+    duration: 2.8,
+    ease: 'sine.inOut',
+    yoyo: true,
+    repeat: -1,
+  })
+
+  // Ambient glow через GSAP (управляется динамически при движении мыши)
+  const glowTl = gsap.timeline({ repeat: -1, yoyo: true })
+  glowTl.to(controller, {
+    filter: 'drop-shadow(0 24px 60px rgba(82,68,109,0.75)) drop-shadow(0 6px 28px rgba(159,132,211,0.35))',
+    duration: 3,
+    ease: 'sine.inOut',
+  })
+
+  let glowRestartTimer
+  function restartGlow() {
+    clearTimeout(glowRestartTimer)
+    glowRestartTimer = setTimeout(() => { glowTl.play() }, 1800)
+  }
+
+  // ─────────────────────────────────────────
+  // 2. СТИКИ — дрейф + блик двигается вместе
+  // ─────────────────────────────────────────
+  function randomDrift(stickEl, glareEl, range) {
+    const tx  = (Math.random() - 0.5) * range * 2
+    const ty  = (Math.random() - 0.5) * range * 2
+    const dur = 1.8 + Math.random() * 1.4
+
+    gsap.to(stickEl, {
+      x: tx, y: ty,
+      duration: dur,
+      ease: 'sine.inOut',
+      overwrite: false,
+      onComplete: () => randomDrift(stickEl, glareEl, range),
+    })
+
+    // Блик следует за стиком, но чуть запаздывает — эффект specular highlight
+    gsap.to(glareEl, {
+      x: tx * 0.55,
+      y: ty * 0.55,
+      duration: dur * 1.6,
+      ease: 'sine.inOut',
+      overwrite: false,
+    })
+  }
+
+  randomDrift(leftStick,  leftGlare,  5)
+  randomDrift(rightStick, rightGlare, 5)
+
+  // ─────────────────────────────────────────
+  // 3. БЛИКИ НА СТИКАХ — мерцание
+  // ─────────────────────────────────────────
+  function glareShimmer(el) {
+    const tl = gsap.timeline({ repeat: -1, delay: Math.random() * 3 })
+    tl.to(el, { opacity: 0.15, duration: 0.08, ease: 'power2.in' })
+      .to(el, { opacity: 1,    duration: 0.25, ease: 'power2.out' })
+      .to(el, { opacity: 0.75, duration: 0.15 })
+      .to(el, { opacity: 1,    duration: 2.5 + Math.random() * 2 })
+  }
+  glareShimmer(leftGlare)
+  glareShimmer(rightGlare)
+
+  // ─────────────────────────────────────────
+  // 4. КНОПКИ — hover + click glow
+  // ─────────────────────────────────────────
+  Object.values(buttons).forEach(({ el, color }) => {
+    if (!el) return
+    el.style.cursor = 'pointer'
+
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, {
+        filter: `drop-shadow(0 0 10px ${color}) drop-shadow(0 0 22px ${color}88)`,
+        scale: 1.13,
+        duration: 0.22,
+        ease: 'back.out(2)',
+        transformOrigin: 'center',
+        overwrite: 'auto',
+      })
+    })
+    el.addEventListener('mouseleave', () => {
+      gsap.to(el, {
+        filter: 'none',
+        scale: 1,
+        duration: 0.35,
+        ease: 'power2.out',
+        overwrite: 'auto',
+      })
+    })
+    el.addEventListener('mousedown', () => {
+      gsap.to(el, { scale: 0.88, duration: 0.1, ease: 'power3.in', overwrite: 'auto' })
+    })
+    el.addEventListener('mouseup', () => {
+      gsap.to(el, {
+        scale: 1.13,
+        duration: 0.28,
+        ease: 'back.out(2.5)',
+        overwrite: 'auto',
+      })
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 5. D-PAD — hover / press
+  // ─────────────────────────────────────────
+  dpadButtons.forEach(el => {
+    if (!el) return
+    el.style.cursor = 'pointer'
+
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, {
+        filter: 'drop-shadow(0 0 7px rgba(200,190,255,0.6))',
+        scale: 1.1,
+        duration: 0.18,
+        ease: 'power2.out',
+        transformOrigin: 'center',
+        overwrite: 'auto',
+      })
+    })
+    el.addEventListener('mouseleave', () => {
+      gsap.to(el, { filter: 'none', scale: 1, duration: 0.25, ease: 'power2.out', overwrite: 'auto' })
+    })
+    el.addEventListener('mousedown', () => {
+      gsap.to(el, { scale: 0.9, duration: 0.09, ease: 'power3.in', overwrite: 'auto' })
+    })
+    el.addEventListener('mouseup', () => {
+      gsap.to(el, { scale: 1.1, duration: 0.2, ease: 'back.out(2)', overwrite: 'auto' })
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 6. СТИКИ — hover glow + click вдавливание
+  // ─────────────────────────────────────────
+  ;[leftStick, rightStick].forEach(el => {
+    if (!el) return
+    el.style.cursor = 'pointer'
+
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, {
+        filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))',
+        duration: 0.2,
+        overwrite: 'auto',
+      })
+    })
+    el.addEventListener('mouseleave', () => {
+      gsap.to(el, { filter: 'none', duration: 0.3, overwrite: 'auto' })
+    })
+    el.addEventListener('mousedown', () => {
+      gsap.to(el, { scaleX: 1.07, scaleY: 0.93, duration: 0.1, overwrite: 'auto' })
+    })
+    el.addEventListener('mouseup', () => {
+      gsap.to(el, {
+        scaleX: 1, scaleY: 1,
+        duration: 0.45,
+        ease: 'elastic.out(1, 0.45)',
+        overwrite: 'auto',
+      })
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 7. ТОЧКИ МИКРОФОНА — волна мигания
+  // ─────────────────────────────────────────
+  micDots.forEach((dot, i) => {
+    gsap.to(dot, {
+      opacity: 0.15,
+      duration: 0.6,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: i * 0.18,
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 8. ПАРАЛЛАКС — 3D наклон + объём + блик
+  // ─────────────────────────────────────────
+  document.addEventListener('mousemove', (e) => {
+    const rect    = controller.getBoundingClientRect()
+    const centerX = rect.left + rect.width  / 2
+    const centerY = rect.top  + rect.height / 2
+    const dx = e.clientX - centerX
+    const dy = e.clientY - centerY
+
+    // Нормализованные значения -1..1
+    const nx = dx / (window.innerWidth  * 0.5)
+    const ny = dy / (window.innerHeight * 0.5)
+
+    // 3D наклон (увеличен для объёма)
+    gsap.to(controller, {
+      rotationX: -dy * 0.024,
+      rotationY:  dx * 0.024,
+      duration: 0.7,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+
+    // Направленная тень — меняется при наклоне, создаёт глубину
+    const sx = nx * -22
+    const sy = ny * -14 + 26
+    glowTl.pause()
+    gsap.to(controller, {
+      filter: `drop-shadow(${sx}px ${sy}px 45px rgba(82,68,109,0.8)) drop-shadow(${sx * 0.3}px ${sy * 0.4}px 20px rgba(199,154,205,0.35))`,
+      duration: 0.75,
+      ease: 'power2.out',
+      overwrite: 'auto',
+      onComplete: restartGlow,
+    })
+
+    // Правый стик + его блик следят за курсором
+    gsap.to(rightStick, {
+      x: dx * 0.032,
+      y: dy * 0.032,
+      duration: 0.8,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+    gsap.to(rightGlare, {
+      x: dx * 0.02,
+      y: dy * 0.02,
+      duration: 1.1,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 9. СКРОЛЛ → левый стик
+  // ─────────────────────────────────────────
+  let scrollTimeout
+  window.addEventListener('wheel', (e) => {
+    const dir = e.deltaY > 0 ? 1 : -1
+    gsap.to(leftStick, {
+      y: dir * 11,
+      duration: 0.18,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+    // Левый блик тоже реагирует на скролл
+    gsap.to(leftGlare, {
+      y: dir * 7,
+      duration: 0.18,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+
+    clearTimeout(scrollTimeout)
+    scrollTimeout = setTimeout(() => {
+      gsap.to(leftStick, {
+        y: (Math.random() - 0.5) * 5,
+        x: (Math.random() - 0.5) * 5,
+        duration: 0.7,
+        ease: 'elastic.out(1, 0.4)',
+        overwrite: 'auto',
+      })
+      gsap.to(leftGlare, {
+        y: 0, x: 0,
+        duration: 0.9,
+        ease: 'elastic.out(1, 0.4)',
+        overwrite: 'auto',
+      })
+    }, 140)
+  })
+
+  // ─────────────────────────────────────────
+  // 10. NAV-LINK — плавный скролл
+  // ─────────────────────────────────────────
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault()
+      const t = document.querySelector(a.getAttribute('href'))
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 11. ТАЧПАД — кнопка PLAY
+  // ─────────────────────────────────────────
+  const touchpadPlay = document.querySelector('#touchpad-play')
+  if (touchpadPlay) {
+    touchpadPlay.addEventListener('mouseenter', () => {
+      gsap.to(touchpadPlay, {
+        filter: 'drop-shadow(0 0 8px rgba(199,154,205,0.9))',
+        duration: 0.2, overwrite: 'auto'
+      })
+    })
+    touchpadPlay.addEventListener('mouseleave', () => {
+      gsap.to(touchpadPlay, {
+        filter: 'none',
+        duration: 0.3, overwrite: 'auto'
+      })
+    })
+    touchpadPlay.addEventListener('mousedown', () => {
+      gsap.to(touchpadPlay, { scale: 0.9, duration: 0.1, transformOrigin: 'center', overwrite: 'auto' })
+    })
+    touchpadPlay.addEventListener('mouseup', () => {
+      gsap.to(touchpadPlay, { scale: 1, duration: 0.2, ease: 'back.out(2)', overwrite: 'auto' })
+    })
+    touchpadPlay.addEventListener('click', () => {
+      window.arcadeOpen && window.arcadeOpen()
+    })
+  }
+
+  // ─────────────────────────────────────────
+  // TOUCHPAD LINER — shimmer анимация
+  // ─────────────────────────────────────────
+  const liner = document.getElementById('shadow-touchpad-up-liner')
+  if (liner) {
+    gsap.to(liner, {
+      attr: { rx: 115, opacity: 1 },
+      duration: 2.2,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 0.5,
+    })
+  }
+
+  // ─────────────────────────────────────────
+  // ПОДСКАЗКА — прячем при первом взаимодействии
+  // ─────────────────────────────────────────
+  const hint = document.getElementById('controller-hint')
+  function hideHint () {
+    if (hint) hint.classList.add('hint-gone')
+    document.getElementById('controller-wrap')?.removeEventListener('mousedown', hideHint)
+    document.getElementById('controller-wrap')?.removeEventListener('touchstart', hideHint)
+  }
+  document.getElementById('controller-wrap')?.addEventListener('mousedown', hideHint)
+  document.getElementById('controller-wrap')?.addEventListener('touchstart', hideHint)
+
+  // ─────────────────────────────────────────
+  // ТАЧПАД + МИКРОФОН → скролл к началу (hero)
+  // ─────────────────────────────────────────
+  function scrollToHero () {
+    document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })
+  }
+  const touchpadUp = document.querySelector('#touchpad-up')
+  if (touchpadUp) {
+    touchpadUp.style.cursor = 'pointer'
+    touchpadUp.addEventListener('click', scrollToHero)
+    touchpadUp.addEventListener('mouseenter', () =>
+      gsap.to(touchpadUp, { filter: 'drop-shadow(0 0 10px rgba(0,229,255,0.7))', duration: 0.2 })
+    )
+    touchpadUp.addEventListener('mouseleave', () =>
+      gsap.to(touchpadUp, { filter: 'none', duration: 0.3 })
+    )
+  }
+  const micBtn = document.querySelector('#glowing-microphone-button')
+  if (micBtn) {
+    micBtn.style.cursor = 'pointer'
+    micBtn.addEventListener('click', scrollToHero)
+    micBtn.addEventListener('mouseenter', () =>
+      gsap.to(micBtn, { filter: 'drop-shadow(0 0 6px rgba(0,229,255,0.8))', duration: 0.2 })
+    )
+    micBtn.addEventListener('mouseleave', () =>
+      gsap.to(micBtn, { filter: 'none', duration: 0.3 })
+    )
+  }
+
+  // ─────────────────────────────────────────
+  // ─────────────────────────────────────────
+  // ДЕТАЛИ: микрофон, тригgerы, menu/options, блики
+  // ─────────────────────────────────────────
+
+  // Микрофон — точки дышат как индикатор активности
+  const microDots = document.querySelectorAll('#micro circle')
+  if (microDots.length) {
+    microDots.forEach((dot, i) => {
+      gsap.to(dot, {
+        attr: { fillOpacity: 0.15 },
+        duration: 0.6 + i * 0.08,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: i * 0.07,
+      })
+    })
+    // При наведении — вспышка как звук
+    document.querySelector('#micro').style.cursor = 'default'
+    document.querySelector('#micro').addEventListener('mouseenter', () => {
+      microDots.forEach((dot, i) => {
+        gsap.to(dot, { attr: { fillOpacity: 1 }, fill: '#00E5FF',
+          duration: 0.1, delay: i * 0.04, overwrite: 'auto' })
+        gsap.to(dot, { attr: { fillOpacity: 0.5 }, fill: '#D9D9D9',
+          duration: 0.4, delay: i * 0.04 + 0.2 })
+      })
+    })
+  }
+
+  // Тригgerы L1 / R1 — hover + press
+  ;['l-1', 'r-1'].forEach(id => {
+    const t = document.getElementById(id)
+    if (!t) return
+    t.style.cursor = 'pointer'
+    t.addEventListener('mouseenter', () =>
+      gsap.to(t, { filter: 'drop-shadow(0 0 6px rgba(0,229,255,0.6)) brightness(1.4)', duration: 0.2 })
+    )
+    t.addEventListener('mouseleave', () =>
+      gsap.to(t, { filter: 'none', duration: 0.3 })
+    )
+    t.addEventListener('mousedown', () =>
+      gsap.to(t, { scaleY: 0.85, transformOrigin: 'center top', duration: 0.1, overwrite: 'auto' })
+    )
+    t.addEventListener('mouseup', () =>
+      gsap.to(t, { scaleY: 1, duration: 0.2, ease: 'back.out(2)', overwrite: 'auto' })
+    )
+  })
+
+  // Кнопки MENU (L) и OPTIONS (R) — hover glow + click ripple
+  ;['menu-button-l', 'options-button-r'].forEach(id => {
+    const btn = document.getElementById(id)
+    if (!btn) return
+    btn.style.cursor = 'pointer'
+    btn.addEventListener('mouseenter', () =>
+      gsap.to(btn, { filter: 'drop-shadow(0 0 5px rgba(199,154,205,0.8)) brightness(1.5)', duration: 0.2 })
+    )
+    btn.addEventListener('mouseleave', () =>
+      gsap.to(btn, { filter: 'none', duration: 0.3 })
+    )
+    btn.addEventListener('mousedown', () =>
+      gsap.to(btn, { scale: 0.88, transformOrigin: 'center', duration: 0.1, overwrite: 'auto' })
+    )
+    btn.addEventListener('mouseup', () =>
+      gsap.to(btn, { scale: 1, duration: 0.25, ease: 'back.out(2)', overwrite: 'auto' })
+    )
+  })
+
+  // Блики на стиках — медленное мерцание
+  ;['left-stick-glare', 'right-stick-glare'].forEach(id => {
+    const g = document.getElementById(id)
+    if (!g) return
+    gsap.to(g, {
+      attr: { r: 3.5, fillOpacity: 0.9 },
+      duration: 1.8,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      delay: id.includes('right') ? 0.9 : 0,
+    })
+  })
+
+  // ─────────────────────────────────────────
+  // 11. КНОПКИ ДЖОСТИКА → навигация по секциям
+  // ─────────────────────────────────────────
+  const btnNav = {
+    square:   '#portfolio',
+    circle:   '#about',
+    triangle: '#services',
+    cross:    '#contact',
+  }
+  Object.entries(buttons).forEach(([name, { el }]) => {
+    if (!el) return
+    el.addEventListener('click', () => {
+      const target = document.querySelector(btnNav[name])
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+
+  // ── КЕЙС-МОДАЛКИ ──
+  document.querySelectorAll('.project-case').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.case
+      const overlay = document.getElementById(id)
+      if (overlay) overlay.classList.add('open')
+    })
+  })
+
+  document.querySelectorAll('.case-overlay').forEach(overlay => {
+    // Закрытие по кнопке или по клику на фон
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay || e.target.hasAttribute('data-close')) {
+        overlay.classList.remove('open')
+      }
+    })
+    // Табы
+    overlay.querySelectorAll('.case-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const panel = tab.closest('.case-panel')
+        panel.querySelectorAll('.case-tab').forEach(t => t.classList.remove('active'))
+        panel.querySelectorAll('.case-content').forEach(c => c.classList.remove('active'))
+        tab.classList.add('active')
+        panel.querySelector(`[data-content="${tab.dataset.tab}"]`).classList.add('active')
+      })
+    })
+  })
+
+  // Закрытие кейса по Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.case-overlay.open').forEach(o => o.classList.remove('open'))
+    }
+  })
+
+  // ─────────────────────────────────────────
+  // D-PAD → переключение цветовых тем
+  // ─────────────────────────────────────────
+  const themes = {
+    up:    { name: '// CYBER PURPLE', tr: '#00E5FF', ci: '#966AAD', cr: '#C79ACD', sq: '#FAD8F8', deep: '#52446D', lavender: '#C79ACD' },
+    down:  { name: '// BLOOD MODE',   tr: '#FF2244', ci: '#FF6B35', cr: '#FF9A3C', sq: '#FFE5D0', deep: '#8B1A1A', lavender: '#FFB347' },
+    left:  { name: '// MATRIX MODE',  tr: '#00FF41', ci: '#00BB2D', cr: '#39FF14', sq: '#CCFFCC', deep: '#0A3D1F', lavender: '#7FFF7F' },
+    right: { name: '// GOLD MODE',    tr: '#FFD700', ci: '#FFA500', cr: '#FF8C00', sq: '#FFF5CC', deep: '#5C3D00', lavender: '#FFDB70' },
+  }
+
+  const themeHud = document.getElementById('theme-hud')
+
+  function applyTheme(dir) {
+    const t = themes[dir]
+    const root = document.documentElement
+    root.style.setProperty('--tr',       t.tr)
+    root.style.setProperty('--ci',       t.ci)
+    root.style.setProperty('--cr',       t.cr)
+    root.style.setProperty('--sq',       t.sq)
+    root.style.setProperty('--deep',     t.deep)
+    root.style.setProperty('--lavender', t.lavender)
+    // Показываем HUD
+    themeHud.textContent = t.name
+    themeHud.classList.add('show')
+    clearTimeout(themeHud._t)
+    themeHud._t = setTimeout(() => themeHud.classList.remove('show'), 1800)
+  }
+
+  const dpadMap = {
+    'arrow-top-up':      'up',
+    'mini-arrow-bottom': 'down',
+    'mini-arrow-left':   'left',
+    'mini-arrow-right':  'right',
+  }
+
+  Object.entries(dpadMap).forEach(([id, dir]) => {
+    const el = document.getElementById(id)
+    if (!el) return
+    el.style.cursor = 'pointer'
+    el.addEventListener('click', () => {
+      // GSAP press animation
+      gsap.to(el, { scale: 0.82, duration: 0.08, ease: 'power2.in',
+        onComplete: () => gsap.to(el, { scale: 1, duration: 0.18, ease: 'back.out(2)' })
+      })
+      // Подсветка
+      const glass = el.querySelector('[id*="glass"]')
+      if (glass) {
+        gsap.to(glass, { fillOpacity: 0.7, duration: 0.1,
+          onComplete: () => gsap.to(glass, { fillOpacity: 0.34, duration: 0.4 })
+        })
+      }
+      applyTheme(dir)
+    })
+  })
+
+})
+</script>
+<script>
+// ══════════════════════════════
+//  ДОЖДЬ
+// ══════════════════════════════
+try {
+;(function () {
+  const hero = document.getElementById('hero')
+  const c    = document.getElementById('rain-canvas')
+  if (!hero || !c) return
+  const ctx  = c.getContext('2d')
+  let W, H, drops = []
+
+  function mkDrop(scatter) {
+    return {
+      x:    Math.random() * (W * 1.3) - W * 0.15,
+      y:    scatter ? Math.random() * H : -(Math.random() * H * 0.4),
+      len:  10 + Math.random() * 24,
+      spd:  7  + Math.random() * 10,
+      op:   0.05 + Math.random() * 0.28,
+      wid:  0.2  + Math.random() * 0.65,
+      wind: 1.0  + Math.random() * 1.0,
+    }
+  }
+
+  function resize() {
+    W = hero.offsetWidth || window.innerWidth
+    H = hero.offsetHeight || window.innerHeight
+    c.width  = W
+    c.height = H
+    drops = Array.from({ length: 240 }, () => mkDrop(true))
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H)
+    drops.forEach(d => {
+      d.x += d.wind
+      d.y += d.spd
+      if (d.y > H + d.len || d.x > W + 20) Object.assign(d, mkDrop(false))
+      ctx.beginPath()
+      ctx.moveTo(d.x, d.y)
+      ctx.lineTo(d.x + d.wind * (d.len / d.spd), d.y + d.len)
+      ctx.strokeStyle = `rgba(180,218,255,${d.op})`
+      ctx.lineWidth = d.wid
+      ctx.stroke()
+    })
+    requestAnimationFrame(tick)
+  }
+
+  window.addEventListener('resize', resize)
+  resize()
+  tick()
+})()
+} catch(e) { console.warn('Rain error:', e) }
+</script>
+
+<script>
+// ══════════════════════════════
+//  BUTTON RUSH — мини-игра
+// ══════════════════════════════
+(function () {
+  const overlay  = document.getElementById('arcade-overlay')
+  const btnOpen  = document.getElementById('arcade-open')
+  const btnClose = document.getElementById('arcade-close')
+  const btnRestart = document.getElementById('arc-restart')
+
+  const scoreEl  = document.getElementById('arc-score')
+  const comboEl  = document.getElementById('arc-combo')
+  const livesEl  = document.getElementById('arc-lives')
+  const msgEl    = document.getElementById('arc-msg')
+  const timerEl  = document.getElementById('arc-timer')
+  const gameoverEl = document.getElementById('arc-gameover')
+  const finalEl  = document.getElementById('arc-final-score')
+  const bestEl   = document.getElementById('arc-best-score')
+
+  const btns = {
+    sq: document.getElementById('ab-sq'),
+    ci: document.getElementById('ab-ci'),
+    tr: document.getElementById('ab-tr'),
+    cr: document.getElementById('ab-cr'),
+  }
+  const codeMap = { KeyA: 'sq', KeyD: 'ci', KeyW: 'tr', KeyS: 'cr' }
+
+  let score, combo, lives, active, timerAnim, timerTimeout, interval, running, best
+
+  function openGame()  { overlay.classList.add('open');  startGame() }
+  function closeGame() { overlay.classList.remove('open'); stopGame() }
+
+  window.arcadeOpen = openGame
+
+  btnOpen.addEventListener('click', openGame)
+  btnClose.addEventListener('click', closeGame)
+  btnRestart.addEventListener('click', startGame)
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeGame() })
+
+  function startGame() {
+    score = 0; combo = 1; lives = 3; active = null; running = true
+    best = parseInt(localStorage.getItem('arcadeBest') || '0')
+    gameoverEl.classList.remove('show')
+    updateHUD()
+    nextRound()
+  }
+
+  function stopGame() {
+    running = false
+    clearTimeout(timerTimeout)
+    cancelAnimationFrame(timerAnim)
+    clearActive()
+  }
+
+  function updateHUD() {
+    scoreEl.textContent = score
+    comboEl.textContent = '×' + combo
+    const hearts = ['', '♥', '♥ ♥', '♥ ♥ ♥']
+    livesEl.textContent = hearts[lives] || ''
+  }
+
+  // Скорость: чем выше очки, тем быстрее
+  function getSpeed() {
+    return Math.max(800, 2200 - score * 12)
+  }
+
+  function nextRound() {
+    if (!running) return
+    clearActive()
+    msgEl.textContent = ''
+    msgEl.className = 'arcade-msg'
+
+    const keys  = ['sq', 'ci', 'tr', 'cr']
+    active = keys[Math.floor(Math.random() * keys.length)]
+
+    const classMap = { sq: 'active-sq', ci: 'active-ci', tr: 'active-tr', cr: 'active-cr' }
+    btns[active].classList.add(classMap[active])
+
+    // Таймер-бар анимация
+    const speed = getSpeed()
+    timerEl.style.transition = 'none'
+    timerEl.style.width = '100%'
+    timerEl.classList.remove('danger')
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        timerEl.style.transition = `width ${speed}ms linear`
+        timerEl.style.width = '0%'
+        if (speed < 800) timerEl.classList.add('danger')
+      })
+    })
+
+    timerTimeout = setTimeout(() => {
+      if (!running || !active) return
+      miss()
+    }, speed)
+  }
+
+  function clearActive() {
+    if (!active) return
+    btns[active].className = btns[active].className
+      .replace(/active-\w+/g, '')
+      .replace(/hit|miss/g, '')
+      .trim()
+    // Нормализуем классы
+    Object.values(btns).forEach(b => {
+      b.classList.remove('active-sq','active-ci','active-tr','active-cr','hit','miss')
+    })
+    active = null
+    clearTimeout(timerTimeout)
+    timerEl.style.transition = 'none'
+    timerEl.style.width = '0%'
+  }
+
+  function hit(key) {
+    if (!running || !active) return
+    if (key === active) {
+      // Правильно!
+      btns[active].classList.add('hit')
+      score += 10 * combo
+      combo = Math.min(combo + 1, 8)
+      const msgs = ['NICE', 'GREAT', 'PERFECT!', 'GODLIKE!']
+      const m = combo >= 4 ? msgs[Math.min(combo - 4, 3)] : (combo >= 2 ? 'COMBO ×' + combo : 'OK')
+      msgEl.textContent = combo >= 3 ? '🔥 COMBO ×' + combo : m
+      msgEl.className = 'arcade-msg ' + (combo >= 4 ? 'combo' : 'good')
+      updateHUD()
+      setTimeout(nextRound, 120)
+    } else {
+      miss(key)
+    }
+  }
+
+  function miss(wrongKey) {
+    if (!running) return
+    clearTimeout(timerTimeout)
+    if (active) btns[active].classList.add('miss')
+    if (wrongKey && wrongKey !== active) btns[wrongKey].classList.add('miss')
+    combo = 1
+    lives--
+    msgEl.textContent = '✕ MISS'
+    msgEl.className = 'arcade-msg bad'
+    updateHUD()
+    if (lives <= 0) {
+      setTimeout(gameOver, 400)
+    } else {
+      setTimeout(nextRound, 500)
+    }
+  }
+
+  function gameOver() {
+    running = false
+    clearActive()
+    if (score > best) {
+      best = score
+      localStorage.setItem('arcadeBest', best)
+    }
+    finalEl.textContent = 'SCORE: ' + score
+    bestEl.textContent  = 'BEST: '  + best
+    gameoverEl.classList.add('show')
+  }
+
+  // Клавиатура (e.code — не зависит от раскладки)
+  window.addEventListener('keydown', e => {
+    if (e.code === 'KeyG') {
+      overlay.classList.contains('open') ? closeGame() : openGame()
+      return
+    }
+    if (!overlay.classList.contains('open')) return
+    e.preventDefault()
+    if (codeMap[e.code]) hit(codeMap[e.code])
+  })
+
+  // Клики на кнопки (для мобильных и мышью)
+  Object.entries(btns).forEach(([id, el]) => {
+    el.addEventListener('click', () => hit(id))
+  })
+})()
+</script>
+
+<script>
+// ══════════════════════════════
+//  ISO FLOOR — изометрический пол
+// ══════════════════════════════
+;(function () {
+  const canvas  = document.getElementById('iso-canvas')
+  if (!canvas) return
+  const ctx     = canvas.getContext('2d')
+  const section = canvas.parentElement
+
+  const COLS = 22, ROWS = 11
+  let TW, TH, MAX_H, W, H, offX, offY
+  const mouse = { col: -1, row: -1 }
+
+  // Сетка высот
+  const grid = Array.from({ length: ROWS }, () =>
+    Array.from({ length: COLS }, () => ({ h: 0 }))
+  )
+
+  function resize() {
+    W = section.offsetWidth
+    H = section.offsetHeight
+    canvas.width  = W
+    canvas.height = H
+    TW     = Math.max(44, Math.min(80, Math.floor(W / (COLS + ROWS) * 2.1)))
+    TH     = TW * 0.5
+    MAX_H  = TH * 1.4
+    offX   = W * 0.5
+    offY   = H * 0.28
+  }
+
+  function toIso(c, r, h) {
+    return {
+      x: offX + (c - r) * TW * 0.5,
+      y: offY + (c + r) * TH * 0.5 - h
+    }
+  }
+
+  function drawTile(c, r, h) {
+    h = Math.max(0, h)
+    const t    = Math.min(1, h / MAX_H)
+    const p    = toIso(c, r, h)
+    const base = toIso(c, r, 0)
+
+    // Цвет топа: тёмно-фиолетовый → яркий циан
+    const rC = Math.floor(52  + (0   - 52)  * t)
+    const gC = Math.floor(44  + (229 - 44)  * t)
+    const bC = Math.floor(109 + (255 - 109) * t)
+    const a  = 0.2 + t * 0.75
+
+    if (t > 0.55) {
+      ctx.shadowBlur  = 14 * t
+      ctx.shadowColor = `rgba(0,229,255,${t * 0.7})`
+    }
+
+    // Топ
+    ctx.beginPath()
+    ctx.moveTo(p.x,          p.y)
+    ctx.lineTo(p.x + TW / 2, p.y + TH / 2)
+    ctx.lineTo(p.x,          p.y + TH)
+    ctx.lineTo(p.x - TW / 2, p.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${rC},${gC},${bC},${a})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},${0.4 + t * 0.5})`
+    ctx.lineWidth   = 0.5 + t * 1.5
+    ctx.stroke()
+    ctx.shadowBlur  = 0
+
+    if (h < 0.8) return
+
+    // Левая грань
+    ctx.beginPath()
+    ctx.moveTo(p.x - TW / 2,    p.y + TH / 2)
+    ctx.lineTo(p.x,              p.y + TH)
+    ctx.lineTo(base.x,           base.y + TH)
+    ctx.lineTo(base.x - TW / 2, base.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${Math.floor(rC*0.35)},${Math.floor(gC*0.35)},${Math.floor(bC*0.35)},${a * 0.8})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},0.15)`
+    ctx.lineWidth   = 0.5
+    ctx.stroke()
+
+    // Правая грань
+    ctx.beginPath()
+    ctx.moveTo(p.x + TW / 2,    p.y + TH / 2)
+    ctx.lineTo(p.x,              p.y + TH)
+    ctx.lineTo(base.x,           base.y + TH)
+    ctx.lineTo(base.x + TW / 2, base.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${Math.floor(rC*0.2)},${Math.floor(gC*0.2)},${Math.floor(bC*0.2)},${a * 0.8})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},0.1)`
+    ctx.lineWidth   = 0.5
+    ctx.stroke()
+  }
+
+  // Мышь → клетка грида
+  function mouseToGrid(mx, my) {
+    const u = (mx - offX) / (TW * 0.5)
+    const v = (my - offY) / (TH * 0.5)
+    return { col: Math.round((u + v) / 2), row: Math.round((v - u) / 2) }
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect()
+    const g = mouseToGrid(e.clientX - rect.left, e.clientY - rect.top)
+    mouse.col = g.col
+    mouse.row = g.row
+  })
+  canvas.addEventListener('mouseleave', () => { mouse.col = -1 })
+
+  let t = 0
+  function tick() {
+    ctx.clearRect(0, 0, W, H)
+    t += 0.018
+
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        const w1 = Math.sin(t * 1.1 + c * 0.42 + r * 0.33) * 0.42
+        const w2 = Math.sin(t * 0.65 - c * 0.28 + r * 0.48) * 0.32
+        const w3 = Math.sin(t * 1.9  + (c + r) * 0.18)      * 0.18
+        const w4 = Math.sin(t * 0.4  + c * 0.15 - r * 0.25) * 0.12
+
+        let boost = 0
+        if (mouse.col >= 0) {
+          const d = Math.hypot(c - mouse.col, r - mouse.row)
+          boost = Math.max(0, 1 - d / 4.5) * 1.0
+        }
+
+        grid[r][c].h = MAX_H * Math.max(0, w1 + w2 + w3 + w4 + boost + 0.38)
+      }
+    }
+
+    // Рисуем сзади вперёд
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        drawTile(c, r, grid[r][c].h)
+      }
+    }
+
+    requestAnimationFrame(tick)
+  }
+
+  resize()
+  window.addEventListener('resize', resize)
+  tick()
+})()
+
+// ── УСЛУГИ: изо-фон (медленнее, глубже) ──
+;(function () {
+  const canvas  = document.getElementById('iso-canvas-svc')
+  const section = document.getElementById('services')
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+
+  const COLS = 26, ROWS = 14
+  let TW, TH, MAX_H, W, H, offX, offY
+  const mouse = { col: -1, row: -1 }
+
+  const grid = Array.from({ length: ROWS }, () =>
+    Array.from({ length: COLS }, () => ({ h: 0 }))
+  )
+
+  function resize() {
+    W = section.offsetWidth
+    H = section.offsetHeight
+    canvas.width  = W
+    canvas.height = H
+    TW    = Math.max(36, Math.min(68, Math.floor(W / (COLS + ROWS) * 2.0)))
+    TH    = TW * 0.5
+    MAX_H = TH * 1.6
+    offX  = W * 0.5
+    offY  = H * 0.22
+  }
+
+  function toIso(c, r, h) {
+    return {
+      x: offX + (c - r) * TW * 0.5,
+      y: offY + (c + r) * TH * 0.5 - h
+    }
+  }
+
+  function drawTile(c, r, h) {
+    h = Math.max(0, h)
+    const t    = Math.min(1, h / MAX_H)
+    const p    = toIso(c, r, h)
+    const base = toIso(c, r, 0)
+
+    const rC = Math.floor(52  + (0   - 52)  * t)
+    const gC = Math.floor(44  + (229 - 44)  * t)
+    const bC = Math.floor(109 + (255 - 109) * t)
+    const a  = 0.12 + t * 0.55   // чуть прозрачнее — фон, не акцент
+
+    if (t > 0.6) {
+      ctx.shadowBlur  = 10 * t
+      ctx.shadowColor = `rgba(0,229,255,${t * 0.5})`
+    }
+
+    ctx.beginPath()
+    ctx.moveTo(p.x,          p.y)
+    ctx.lineTo(p.x + TW / 2, p.y + TH / 2)
+    ctx.lineTo(p.x,          p.y + TH)
+    ctx.lineTo(p.x - TW / 2, p.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${rC},${gC},${bC},${a})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},${0.25 + t * 0.45})`
+    ctx.lineWidth   = 0.5 + t
+    ctx.stroke()
+    ctx.shadowBlur  = 0
+
+    if (h < 1) return
+
+    ctx.beginPath()
+    ctx.moveTo(p.x - TW / 2,    p.y + TH / 2)
+    ctx.lineTo(p.x,              p.y + TH)
+    ctx.lineTo(base.x,           base.y + TH)
+    ctx.lineTo(base.x - TW / 2, base.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${Math.floor(rC*0.3)},${Math.floor(gC*0.3)},${Math.floor(bC*0.3)},${a * 0.7})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},0.1)`
+    ctx.lineWidth   = 0.5
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.moveTo(p.x + TW / 2,    p.y + TH / 2)
+    ctx.lineTo(p.x,              p.y + TH)
+    ctx.lineTo(base.x,           base.y + TH)
+    ctx.lineTo(base.x + TW / 2, base.y + TH / 2)
+    ctx.closePath()
+    ctx.fillStyle   = `rgba(${Math.floor(rC*0.18)},${Math.floor(gC*0.18)},${Math.floor(bC*0.18)},${a * 0.7})`
+    ctx.fill()
+    ctx.strokeStyle = `rgba(${rC},${gC},${bC},0.07)`
+    ctx.lineWidth   = 0.5
+    ctx.stroke()
+  }
+
+  function mouseToGrid(mx, my) {
+    const u = (mx - offX) / (TW * 0.5)
+    const v = (my - offY) / (TH * 0.5)
+    return { col: Math.round((u + v) / 2), row: Math.round((v - u) / 2) }
+  }
+
+  // Мышь отслеживается по всей секции (сквозь карточки)
+  section.addEventListener('mousemove', e => {
+    const rect = section.getBoundingClientRect()
+    const g = mouseToGrid(e.clientX - rect.left, e.clientY - rect.top)
+    mouse.col = g.col
+    mouse.row = g.row
+  })
+  section.addEventListener('mouseleave', () => { mouse.col = -1 })
+
+  let t = 0
+  function tick() {
+    ctx.clearRect(0, 0, W, H)
+    t += 0.011   // медленнее чем standalone
+
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        const w1 = Math.sin(t * 1.0  + c * 0.38 + r * 0.30) * 0.40
+        const w2 = Math.sin(t * 0.55 - c * 0.25 + r * 0.42) * 0.30
+        const w3 = Math.sin(t * 1.6  + (c + r) * 0.15)      * 0.16
+        const w4 = Math.sin(t * 0.35 + c * 0.12 - r * 0.22) * 0.10
+
+        let boost = 0
+        if (mouse.col >= 0) {
+          const d = Math.hypot(c - mouse.col, r - mouse.row)
+          boost = Math.max(0, 1 - d / 5) * 1.1
+        }
+
+        grid[r][c].h = MAX_H * Math.max(0, w1 + w2 + w3 + w4 + boost + 0.36)
+      }
+    }
+
+    for (let r = 0; r < ROWS; r++)
+      for (let c = 0; c < COLS; c++)
+        drawTile(c, r, grid[r][c].h)
+
+    requestAnimationFrame(tick)
+  }
+
+  resize()
+  window.addEventListener('resize', resize)
+  tick()
+})()
+
+// ── ТУМАН (fog reveal) ──
+;(function () {
+  const section = document.getElementById('fog-section')
+  const canvas  = document.getElementById('fog-canvas')
+  if (!section || !canvas) return
+  const ctx = canvas.getContext('2d')
+
+  let W, H
+  let mouseX = -9999, mouseY = -9999
+  let clearR = 0, targetR = 0
+
+  // Облака-блобы
+  const blobs = Array.from({ length: 10 }, (_, i) => ({
+    x:  Math.random(),
+    y:  Math.random(),
+    r:  100 + Math.random() * 160,
+    dx: (Math.random() - 0.5) * 0.00025,
+    dy: (Math.random() - 0.5) * 0.00015,
+    a:  0.55 + Math.random() * 0.35,
+  }))
+
+  function resize() {
+    W = section.offsetWidth
+    H = section.offsetHeight
+    canvas.width  = W
+    canvas.height = H
+  }
+
+  section.addEventListener('mousemove', e => {
+    const r = section.getBoundingClientRect()
+    mouseX = e.clientX - r.left
+    mouseY = e.clientY - r.top
+    targetR = 130
+  })
+  section.addEventListener('mouseleave', () => { targetR = 0 })
+
+  // Тач-поддержка
+  section.addEventListener('touchmove', e => {
+    e.preventDefault()
+    const r = section.getBoundingClientRect()
+    mouseX = e.touches[0].clientX - r.left
+    mouseY = e.touches[0].clientY - r.top
+    targetR = 130
+  }, { passive: false })
+  section.addEventListener('touchend', () => { targetR = 0 })
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H)
+
+    // Плавно тянемся к targetR
+    clearR += (targetR - clearR) * 0.09
+
+    // Базовый тёмный туман
+    ctx.fillStyle = 'rgba(9,7,18,0.72)'
+    ctx.fillRect(0, 0, W, H)
+
+    // Блобы-облака
+    blobs.forEach(b => {
+      b.x += b.dx; b.y += b.dy
+      if (b.x < -0.15) b.x = 1.15
+      if (b.x > 1.15)  b.x = -0.15
+      if (b.y < -0.15) b.y = 1.15
+      if (b.y > 1.15)  b.y = -0.15
+
+      const g = ctx.createRadialGradient(b.x * W, b.y * H, 0, b.x * W, b.y * H, b.r)
+      g.addColorStop(0, `rgba(9,7,18,${b.a})`)
+      g.addColorStop(1, 'rgba(9,7,18,0)')
+      ctx.fillStyle = g
+      ctx.fillRect(0, 0, W, H)
+    })
+
+    // Прорезаем туман под мышью
+    if (clearR > 1) {
+      ctx.globalCompositeOperation = 'destination-out'
+      const g = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, clearR)
+      g.addColorStop(0,   'rgba(0,0,0,1)')
+      g.addColorStop(0.55,'rgba(0,0,0,0.85)')
+      g.addColorStop(0.85,'rgba(0,0,0,0.3)')
+      g.addColorStop(1,   'rgba(0,0,0,0)')
+      ctx.fillStyle = g
+      ctx.fillRect(0, 0, W, H)
+      ctx.globalCompositeOperation = 'source-over'
+    }
+
+    requestAnimationFrame(tick)
+  }
+
+  resize()
+  window.addEventListener('resize', resize)
+  tick()
+})()
+</script>
+
+<!-- ══ ALL EXTRAS ══ -->
+<script>
+;(function () {
+
+  /* на тач-устройствах не нужен кастомный курсор и trail */
+  const isTouch = window.matchMedia('(hover: none)').matches
+  if (isTouch) return
+
+  /* ── 1. КАСТОМНЫЙ КУРСОР ── */
+  const cur  = document.getElementById('custom-cursor')
+  const dot  = document.getElementById('cursor-dot')
+  const ring = document.getElementById('cursor-ring')
+  let mx = 0, my = 0, rx = 0, ry = 0
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px'
+    document.documentElement.classList.add('has-custom-cursor')
+  })
+  // кольцо чуть отстаёт
+  ;(function loopRing() {
+    rx += (mx - rx) * 0.12
+    ry += (my - ry) * 0.12
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px'
+    requestAnimationFrame(loopRing)
+  })()
+
+  document.addEventListener('mousedown', () => cur.classList.add('clicking'))
+  document.addEventListener('mouseup',   () => cur.classList.remove('clicking'))
+
+  document.querySelectorAll('a,button,[style*="cursor:pointer"],[style*="cursor: pointer"]').forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('hovering'))
+    el.addEventListener('mouseleave', () => cur.classList.remove('hovering'))
+  })
+
+  /* ── 2. CURSOR TRAIL ── */
+  const tc  = document.getElementById('trail-canvas')
+  const tct = tc.getContext('2d')
+  tc.width  = window.innerWidth
+  tc.height = window.innerHeight
+  window.addEventListener('resize', () => { tc.width = window.innerWidth; tc.height = window.innerHeight })
+
+  const particles = []
+  document.addEventListener('mousemove', e => {
+    particles.push({ x: e.clientX, y: e.clientY, r: 3, a: 0.7, life: 1 })
+    if (particles.length > 60) particles.shift()
+  })
+  ;(function trailLoop() {
+    tct.clearRect(0, 0, tc.width, tc.height)
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i]
+      p.life -= 0.045
+      p.r    *= 0.93
+      if (p.life <= 0) { particles.splice(i, 1); continue }
+      tct.beginPath()
+      tct.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+      tct.fillStyle = `rgba(0,229,255,${p.life * 0.45})`
+      tct.fill()
+    }
+    requestAnimationFrame(trailLoop)
+  })()
+
+  /* ── 3. SCROLL PROGRESS ── */
+  const prog = document.getElementById('scroll-progress')
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100
+    prog.style.width = pct + '%'
+  })
+
+  /* ── 4. CLICK RIPPLE ── */
+  document.addEventListener('click', e => {
+    const r = document.createElement('div')
+    r.className = 'click-ripple'
+    r.style.left = e.clientX + 'px'
+    r.style.top  = e.clientY + 'px'
+    document.body.appendChild(r)
+    setTimeout(() => r.remove(), 600)
+  })
+
+  /* ── 5. NEON FLICKER на nav ── */
+  const navLinks = document.querySelectorAll('.nav-link, .sh-link')
+  setInterval(() => {
+    const el = navLinks[Math.floor(Math.random() * navLinks.length)]
+    if (!el) return
+    el.classList.add('flickering')
+    setTimeout(() => el.classList.remove('flickering'), 450)
+  }, 2800)
+
+  /* ── 6. SCROLL REVEAL ── */
+  document.querySelectorAll('.cyber-section, .cyber-panel, .fw-card, .rv-card').forEach(el => {
+    el.classList.add('reveal')
+  })
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target) } })
+  }, { threshold: 0.1 })
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el))
+
+  /* ── 7. СЧЁТЧИКИ ЦИФР ── */
+  const counters = document.querySelectorAll('[data-count]')
+  const countObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return
+      const el     = e.target
+      const target = +el.dataset.count
+      const suffix = el.dataset.suffix || ''
+      let cur = 0
+      const step = Math.ceil(target / 40)
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, target)
+        el.textContent = cur + suffix
+        if (cur >= target) clearInterval(t)
+      }, 35)
+      countObs.unobserve(el)
+    })
+  }, { threshold: 0.5 })
+  counters.forEach(el => countObs.observe(el))
+
+  /* ── 8. TYPING EFFECT на hero-sub ── */
+  const heroSub = document.querySelector('.hero-sub')
+  if (heroSub) {
+    const fullText = heroSub.textContent
+    heroSub.textContent = ''
+    heroSub.style.borderRight = '2px solid var(--tr)'
+    let i = 0
+    const type = setInterval(() => {
+      heroSub.textContent = fullText.slice(0, ++i)
+      if (i >= fullText.length) {
+        clearInterval(type)
+        setTimeout(() => { heroSub.style.borderRight = 'none' }, 800)
+      }
+    }, 55)
+  }
+
+  /* ── 9. DATA SIDEBAR ── */
+  const dc  = document.getElementById('data-canvas')
+  const dct = dc.getContext('2d')
+  dc.width  = 28
+  function resizeDC() { dc.height = window.innerHeight }
+  resizeDC(); window.addEventListener('resize', resizeDC)
+
+  const HEX = '0123456789ABCDEF'
+  const dRows = []
+  for (let i = 0; i < 60; i++) dRows.push({ y: Math.random() * window.innerHeight, speed: 0.4 + Math.random() * 0.8, char: '' })
+
+  setInterval(() => {
+    dct.fillStyle = 'rgba(9,7,18,0.25)'
+    dct.fillRect(0, 0, 28, dc.height)
+    dct.font = '9px monospace'
+    dRows.forEach(r => {
+      r.char = HEX[Math.floor(Math.random() * 16)]
+      const a = Math.random() * 0.6 + 0.15
+      dct.fillStyle = `rgba(0,229,255,${a})`
+      dct.fillText(r.char, 6, r.y)
+      r.y += r.speed
+      if (r.y > dc.height) r.y = 0
+    })
+  }, 80)
+
+  /* ── 10. KONAMI CODE ── */
+  const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA']
+  let ki = 0
+  const flash = document.getElementById('konami-flash')
+  document.addEventListener('keydown', e => {
+    if (e.code === KONAMI[ki]) {
+      ki++
+      if (ki === KONAMI.length) {
+        ki = 0
+        flash.classList.add('active')
+        // случайная тема
+        const themes = ['--tr:#FF2244;--ci:#FF6666', '--tr:#00FF41;--ci:#00BB30', '--tr:#FFD700;--ci:#FFA500', '--tr:#FF00FF;--ci:#CC00CC']
+        const pick = themes[Math.floor(Math.random() * themes.length)].split(';')
+        pick.forEach(p => {
+          const [k, v] = p.split(':')
+          document.documentElement.style.setProperty(k, v)
+        })
+        setTimeout(() => flash.classList.remove('active'), 600)
+      }
+    } else { ki = 0 }
+  })
+
+})()
+</script>
+
+<!-- ══ STICKY HEADER ══ -->
+<script>
+;(function () {
+  const header = document.getElementById('sticky-header')
+  const hero   = document.getElementById('hero')
+  if (!header || !hero) return
+  const observer = new IntersectionObserver(
+    ([entry]) => header.classList.toggle('sh-visible', !entry.isIntersecting),
+    { threshold: 0.1 }
+  )
+  observer.observe(hero)
+})()
+</script>
+
+<!-- ══ REVIEWS TICKER CLONE ══ -->
+<script>
+;(function () {
+  const ticker = document.getElementById('reviews-ticker')
+  if (!ticker) return
+  // clone all cards so the strip loops seamlessly
+  const cards = Array.from(ticker.children)
+  cards.forEach(c => ticker.appendChild(c.cloneNode(true)))
+})()
+</script>
+
+<!-- ══ MOBILE WOW EFFECTS ══ -->
+<script>
+;(function () {
+  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window
+  if (!isMobile) return
+
+  /* ── 1. TOUCH TRAIL ── */
+  const tc = document.getElementById('mob-trail')
+  if (tc) {
+    const ctx = tc.getContext('2d')
+    const resize = () => { tc.width = window.innerWidth; tc.height = window.innerHeight }
+    resize()
+    window.addEventListener('resize', resize)
+
+    const parts = []
+    document.addEventListener('touchmove', e => {
+      for (const t of e.touches) {
+        for (let i = 0; i < 4; i++) {
+          parts.push({
+            x: t.clientX + (Math.random() - 0.5) * 24,
+            y: t.clientY + (Math.random() - 0.5) * 24,
+            r: 2 + Math.random() * 5,
+            vx: (Math.random() - 0.5) * 1.8,
+            vy: (Math.random() - 0.5) * 1.8 - 0.8,
+            life: 1,
+            decay: 0.035 + Math.random() * 0.04,
+            col: Math.random() > 0.4 ? '0,229,255' : '199,154,205',
+          })
+        }
+      }
+    }, { passive: true })
+
+    ;(function loop () {
+      ctx.clearRect(0, 0, tc.width, tc.height)
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i]
+        p.x += p.vx; p.y += p.vy; p.life -= p.decay
+        if (p.life <= 0) { parts.splice(i, 1); continue }
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(${p.col},${p.life * 0.75})`
+        ctx.fill()
+      }
+      requestAnimationFrame(loop)
+    })()
+  }
+
+  /* ── 2. GYROSCOPE PARALLAX ON HERO ── */
+  const heroCanvas = document.getElementById('rain-canvas')
+  if (heroCanvas && window.DeviceOrientationEvent) {
+    let baseG = null, baseB = null
+    window.addEventListener('deviceorientation', e => {
+      if (e.gamma == null) return
+      if (baseG === null) { baseG = e.gamma; baseB = e.beta; return }
+      const dx = Math.max(-30, Math.min(30, (e.gamma - baseG) * 0.6))
+      const dy = Math.max(-20, Math.min(20, (e.beta  - baseB) * 0.35))
+      heroCanvas.style.transform = `translate(${dx}px, ${dy}px) scale(1.06)`
+      heroCanvas.style.transition = 'transform 0.1s linear'
+    })
+  }
+
+  /* ── 3. SECTION TITLE GLITCH REVEAL ── */
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('mob-glitch-in')
+          obs.unobserve(en.target)
+        }
+      })
+    }, { threshold: 0.6 })
+    document.querySelectorAll('.section-title').forEach(t => obs.observe(t))
+  }
+
+  /* ── 4. HERO NAME TAP → GLITCH EXPLOSION ── */
+  const heroName = document.querySelector('.hero-name')
+  if (heroName) {
+    heroName.addEventListener('touchstart', () => {
+      heroName.classList.remove('hero-tap-glitch')
+      void heroName.offsetWidth
+      heroName.classList.add('hero-tap-glitch')
+    }, { passive: true })
+    heroName.addEventListener('animationend', () => heroName.classList.remove('hero-tap-glitch'))
+  }
+
+  /* ── 5. BIG TOUCH RIPPLE ── */
+  document.addEventListener('touchstart', e => {
+    const t = e.touches[0]
+    const d = document.createElement('div')
+    d.className = 'mob-ripple'
+    d.style.left = t.clientX + 'px'
+    d.style.top  = t.clientY + 'px'
+    document.body.appendChild(d)
+    d.addEventListener('animationend', () => d.remove())
+  }, { passive: true })
+
+  /* ── 6. FLOATING SYMBOLS ── */
+  const symBox = document.querySelector('.mob-symbols')
+  if (symBox) {
+    const glyphs = ['□', '○', '△', '✕', '◈', '◇', '✦', '⬡', '□', '△']
+    glyphs.forEach((g, i) => {
+      const s = document.createElement('span')
+      s.textContent = g
+      s.style.cssText =
+        `left:${8 + Math.random() * 84}%;` +
+        `--dur:${7 + Math.random() * 11}s;` +
+        `--delay:-${Math.random() * 14}s;` +
+        `--sz:${11 + Math.random() * 14}px;` +
+        `--op:${0.06 + Math.random() * 0.1};`
+      symBox.appendChild(s)
+    })
+  }
+
+  /* ── 7. FOG SECTION: AUTO REVEAL ON MOBILE (no mouse) ── */
+  const fogCanvas = document.getElementById('fog-canvas')
+  const fogHint   = document.querySelector('.fog-hint')
+  if (fogCanvas && fogHint) {
+    fogHint.textContent = '// свайп для раскрытия'
+    let revealed = false
+    fogCanvas.closest('section')?.addEventListener('touchmove', e => {
+      if (revealed) return
+      revealed = true
+      // Trigger the same radius expansion as mousemove does
+      fogCanvas.dispatchEvent(new MouseEvent('mousemove', {
+        clientX: fogCanvas.getBoundingClientRect().left + fogCanvas.offsetWidth / 2,
+        clientY: fogCanvas.getBoundingClientRect().top  + fogCanvas.offsetHeight / 2,
+      }))
+    }, { passive: true })
+  }
+
+})()
+</script>
+
+<!-- ══ PRELOADER SCRIPT ══ -->
+<script>
+;(function () {
+  const pl     = document.getElementById('preloader')
+  const bar    = document.getElementById('pl-bar')
+  const pct    = document.getElementById('pl-pct')
+  const logEl  = document.getElementById('pl-log')
+
+  // Пропускаем прелоадер если уже были на сайте в этой сессии
+  if (sessionStorage.getItem('visited')) {
+    pl.style.display = 'none'
+    return
+  }
+  sessionStorage.setItem('visited', '1')
+
+  const lines = [
+    'BOOT::SYSTEM_INIT',
+    'LOAD::TYPEFACE_ORBITRON',
+    'LOAD::CANVAS_RAIN',
+    'INIT::PORTFOLIO_DATA',
+    'RENDER::HERO_SECTION',
+    'SYNC::THMJAY_IDENTITY',
+    'ACCESS::GRANTED',
+  ]
+
+  /* rain on preloader canvas */
+  const cv  = document.getElementById('preloader-rain')
+  const ctx = cv.getContext('2d')
+  let cols, drops
+  function initRain () {
+    cv.width  = window.innerWidth
+    cv.height = window.innerHeight
+    cols  = Math.floor(cv.width / 18)
+    drops = Array.from({ length: cols }, () => Math.random() * -50)
+  }
+  function drawRain () {
+    ctx.fillStyle = 'rgba(9,7,18,0.18)'
+    ctx.fillRect(0, 0, cv.width, cv.height)
+    ctx.fillStyle = '#00E5FF'
+    ctx.font = '13px monospace'
+    drops.forEach((y, i) => {
+      const ch = String.fromCharCode(0x30A0 + Math.random() * 96)
+      ctx.globalAlpha = Math.random() * 0.5 + 0.15
+      ctx.fillText(ch, i * 18, y * 18)
+      drops[i] = y > cv.height / 18 + 5 ? -5 : y + 1
+    })
+    ctx.globalAlpha = 1
+  }
+  initRain()
+  window.addEventListener('resize', initRain)
+  const rainId = setInterval(drawRain, 50)
+
+  /* progress animation */
+  let progress = 0
+  let lineIdx  = 0
+  const total  = 100
+  const step   = 100 / lines.length
+
+  function nextLine () {
+    if (lineIdx < lines.length) {
+      logEl.textContent = '> ' + lines[lineIdx++]
+    }
+  }
+
+  nextLine()
+  const ticker = setInterval(() => {
+    progress = Math.min(progress + (Math.random() * 2.5 + 0.5), total)
+    bar.style.width = progress + '%'
+    pct.textContent = Math.floor(progress) + '%'
+
+    if (lineIdx < lines.length && progress >= lineIdx * step) nextLine()
+
+    if (progress >= total) {
+      clearInterval(ticker)
+      pct.textContent = '100%'
+      logEl.textContent = '> SYSTEM_READY'
+      setTimeout(() => {
+        clearInterval(rainId)
+        pl.classList.add('pl-hidden')
+      }, 600)
+    }
+  }, 40)
+})()
+</script>
+</body>
+</html>
