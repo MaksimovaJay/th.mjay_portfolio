@@ -2255,6 +2255,7 @@ body {
 
   /* ── Hero ── */
   .neon-frame { padding: 24px 16px; }
+  .hero-name { font-size: 11vw; letter-spacing: 3px; }
   .hero-nav { display: none; }          /* убираем nav, есть sticky header */
   .frame-label.tr { display: none; }
 
