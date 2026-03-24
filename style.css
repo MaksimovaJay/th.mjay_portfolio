@@ -492,7 +492,7 @@ body {
 
 .hero-name {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(36px, 10vw, 108px);
+  font-size: clamp(52px, 10vw, 108px);
   font-weight: 900;
   letter-spacing: 8px;
   line-height: 1;
@@ -2158,11 +2158,12 @@ body {
 
   /* ── Hero ── */
   .hero-inner {
-    width: 96vw;
+    width: 90vw;
+    margin: 0 auto;
     padding: 40px 0 60px;
     margin-top: 0;
   }
-  .neon-frame { padding: 32px 24px; }
+  .neon-frame { padding: 32px 20px; }
   .hero-nav {
     flex-wrap: wrap;
     gap: 0;
