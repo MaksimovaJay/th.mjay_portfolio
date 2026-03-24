@@ -306,6 +306,14 @@
   </div>
   <div class="footer-line"></div>
 </footer>
-
+<script>
+;(function(){
+  const h = document.querySelector('.about-header');
+  if (!h) return;
+  window.addEventListener('scroll', function(){
+    h.classList.toggle('ah-visible', window.scrollY > 60);
+  }, {passive: true});
+})();
+</script>
 </body>
 </html>
