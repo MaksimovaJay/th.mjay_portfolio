@@ -306,7 +306,7 @@
     <span class="section-code">RV_04</span>
   </div>
 
-  <div class="reviews-ticker-wrap">
+  <div class="reviews-ticker-wrap" id="reviews-wrap">
     <div class="reviews-ticker" id="reviews-ticker">
 
       <div class="rv-card">
@@ -361,6 +361,7 @@
 
     </div>
   </div>
+  <div class="rv-dots" id="rv-dots"></div>
 </section>
 
 <!-- ══════════════════════════════
@@ -2388,14 +2389,49 @@ try {
 })()
 </script>
 
-<!-- ══ REVIEWS TICKER CLONE ══ -->
+<!-- ══ REVIEWS TICKER CLONE + MOBILE SWIPE DOTS ══ -->
 <script>
 ;(function () {
   const ticker = document.getElementById('reviews-ticker')
   if (!ticker) return
-  // clone all cards so the strip loops seamlessly
+
+  const isMobile = () => window.innerWidth <= 768
+
+  if (!isMobile()) {
+    // Десктоп — бесконечный тикер
+    const cards = Array.from(ticker.children)
+    cards.forEach(c => ticker.appendChild(c.cloneNode(true)))
+    return
+  }
+
+  // Мобилка — свайп-карусель с точками
+  const wrap = document.getElementById('reviews-wrap')
+  const dotsEl = document.getElementById('rv-dots')
   const cards = Array.from(ticker.children)
-  cards.forEach(c => ticker.appendChild(c.cloneNode(true)))
+  const count = cards.length
+
+  // Создаём точки
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div')
+    dot.className = 'rv-dot' + (i === 0 ? ' active' : '')
+    dot.addEventListener('click', () => {
+      cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    })
+    dotsEl.appendChild(dot)
+  })
+
+  const dots = Array.from(dotsEl.children)
+
+  // Обновляем активную точку при скролле
+  wrap.addEventListener('scroll', () => {
+    const wrapLeft = wrap.getBoundingClientRect().left
+    let closest = 0, minDist = Infinity
+    cards.forEach((card, i) => {
+      const dist = Math.abs(card.getBoundingClientRect().left - wrapLeft)
+      if (dist < minDist) { minDist = dist; closest = i }
+    })
+    dots.forEach((d, i) => d.classList.toggle('active', i === closest))
+  }, { passive: true })
 })()
 </script>
 

@@ -1642,6 +1642,29 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ── Dots индикатор карусели (скрыт на десктопе) ── */
+.rv-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.rv-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(150,106,173,0.3);
+  border: 1px solid rgba(150,106,173,0.5);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.rv-dot.active {
+  background: var(--tr);
+  border-color: var(--tr);
+  transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(0,229,255,0.6);
+}
 .rv-card {
   width: 360px;
   flex-shrink: 0;
@@ -2100,8 +2123,27 @@ body {
   }
   .cyber-section { padding: 48px 20px; }
 
-  /* ── Reviews ── */
-  .rv-card { width: 280px; }
+  /* ── Reviews — свайп-карусель ── */
+  .reviews-ticker-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    mask-image: none;
+    -webkit-mask-image: none;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+  .reviews-ticker-wrap::-webkit-scrollbar { display: none; }
+  .reviews-ticker {
+    animation: none !important;
+    width: max-content;
+  }
+  .rv-card {
+    width: 80vw;
+    scroll-snap-align: center;
+  }
+  .rv-dots { display: flex; }  /* показываем точки */
 
   /* ── Services ── */
   .services-bg-section { padding: 48px 20px 60px; }
