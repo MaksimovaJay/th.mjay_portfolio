@@ -304,6 +304,7 @@ body {
   background: var(--black);
   color: var(--pink);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ========================
@@ -483,7 +484,7 @@ body {
 
 .hero-name {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(42px, 8vw, 86px);
+  font-size: clamp(52px, 10vw, 108px);
   font-weight: 900;
   letter-spacing: 8px;
   line-height: 1;
@@ -498,7 +499,7 @@ body {
 
 .hero-sub {
   font-family: 'Space Mono', monospace;
-  font-size: clamp(10px, 1.5vw, 13px);
+  font-size: clamp(12px, 1.8vw, 16px);
   letter-spacing: 6px;
   color: var(--tr);
   text-transform: uppercase;
@@ -569,7 +570,7 @@ body {
 
 .section-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(22px, 4vw, 36px);
+  font-size: clamp(26px, 4.5vw, 44px);
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -2192,6 +2193,14 @@ body {
   .arcade-buttons { width: 180px; height: 180px; }
 }
 
+
+/* ════════════════════════════════════════
+   LANDSCAPE MOBILE — убираем джойстик
+════════════════════════════════════════ */
+@media (orientation: landscape) and (max-height: 600px) {
+  #controller-wrap,
+  #controller-hint { display: none !important; }
+}
 
 /* ════════════════════════════════════════
    MOBILE WOW EFFECTS
