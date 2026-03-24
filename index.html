@@ -76,6 +76,7 @@
       </div>
     </div>
   </div>
+  <div class="pf-dots" id="pf-dots"></div>
 </section>
 
 <!-- ══════════════════════════════
@@ -108,7 +109,11 @@
   </div>
 
   <a href="figma.html" class="figma-portfolio-link">// 07 проектов в Figma — смотреть все →</a>
-  <div class="portfolio-grid">
+  <div class="portfolio-carousel-wrap">
+    <button class="pf-arrow pf-arrow--prev" id="pf-prev" aria-label="Назад">‹</button>
+    <button class="pf-arrow pf-arrow--next" id="pf-next" aria-label="Вперёд">›</button>
+  </div>
+  <div class="portfolio-grid" id="portfolio-grid">
 
     <div class="cyber-panel project-card project-case" data-case="case-proava">
       <div class="card-thumb card-thumb--proava">
@@ -2434,6 +2439,52 @@ try {
       const dist = Math.abs(card.getBoundingClientRect().left - wrapLeft)
       if (dist < minDist) { minDist = dist; closest = i }
     })
+    dots.forEach((d, i) => d.classList.toggle('active', i === closest))
+  }, { passive: true })
+})()
+</script>
+
+<!-- ══ PORTFOLIO CAROUSEL (mobile) ══ -->
+<script>
+;(function () {
+  if (window.innerWidth > 768) return
+
+  const grid   = document.getElementById('portfolio-grid')
+  const dotsEl = document.getElementById('pf-dots')
+  const btnPrev = document.getElementById('pf-prev')
+  const btnNext = document.getElementById('pf-next')
+  if (!grid || !dotsEl) return
+
+  const cards = Array.from(grid.querySelectorAll('.project-card'))
+  let current = 0
+
+  // Создаём точки
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div')
+    dot.className = 'pf-dot' + (i === 0 ? ' active' : '')
+    dot.addEventListener('click', () => scrollTo(i))
+    dotsEl.appendChild(dot)
+  })
+  const dots = Array.from(dotsEl.children)
+
+  function scrollTo(i) {
+    current = Math.max(0, Math.min(cards.length - 1, i))
+    cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    dots.forEach((d, j) => d.classList.toggle('active', j === current))
+  }
+
+  btnPrev?.addEventListener('click', () => scrollTo(current - 1))
+  btnNext?.addEventListener('click', () => scrollTo(current + 1))
+
+  // Обновляем точку при свайпе
+  grid.addEventListener('scroll', () => {
+    const gridLeft = grid.getBoundingClientRect().left
+    let closest = 0, minDist = Infinity
+    cards.forEach((card, i) => {
+      const dist = Math.abs(card.getBoundingClientRect().left - gridLeft)
+      if (dist < minDist) { minDist = dist; closest = i }
+    })
+    current = closest
     dots.forEach((d, i) => d.classList.toggle('active', i === closest))
   }, { passive: true })
 })()

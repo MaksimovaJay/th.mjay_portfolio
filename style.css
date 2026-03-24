@@ -1645,6 +1645,51 @@ body {
   to   { transform: translateX(-50%); }
 }
 
+/* ── Портфолио карусель: стрелки и точки (только мобилка) ── */
+.portfolio-carousel-wrap {
+  display: none;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.pf-arrow {
+  background: transparent;
+  border: 1px solid rgba(0,229,255,0.4);
+  color: var(--tr);
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+.pf-arrow:active { background: rgba(0,229,255,0.1); border-color: var(--tr); }
+
+.pf-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.pf-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,229,255,0.2);
+  border: 1px solid rgba(0,229,255,0.4);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.pf-dot.active {
+  background: var(--tr);
+  border-color: var(--tr);
+  transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(0,229,255,0.6);
+}
+
 /* ── Dots индикатор карусели (скрыт на десктопе) ── */
 .rv-dots {
   display: none;
@@ -2119,10 +2164,25 @@ body {
   .nav-link { font-size: 9px; padding: 6px 12px; }
   .arcade-trigger { font-size: 9px; padding: 6px 12px; }
 
-  /* ── Портфолио ── */
+  /* ── Портфолио — карусель ── */
+  .portfolio-carousel-wrap { display: flex; }
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 16px;
+    padding-bottom: 8px;
   }
+  .portfolio-grid::-webkit-scrollbar { display: none; }
+  .portfolio-grid .project-card {
+    min-width: 80vw;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+  .pf-dots { display: flex; }
   .cyber-section { padding: 48px 20px; }
 
   /* ── Reviews — свайп-карусель ── */
