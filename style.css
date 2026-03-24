@@ -1449,6 +1449,8 @@ body {
   background: var(--black);
   display: flex;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
   justify-content: center;
 }
 
