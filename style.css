@@ -152,6 +152,14 @@
   letter-spacing: 5px;
   color: var(--pink);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sh-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 .sh-nav {
   display: flex;
@@ -1129,11 +1137,11 @@ body {
   );
   pointer-events: none;
 }
-.card-thumb--proava { background: linear-gradient(135deg, rgba(82,68,109,0.5) 0%, rgba(150,106,173,0.2) 100%); }
-.card-thumb--aba    { background: linear-gradient(135deg, rgba(0,229,255,0.08) 0%, rgba(82,68,109,0.5) 100%); }
-.card-thumb--swp    { background: linear-gradient(135deg, rgba(0,100,200,0.15) 0%, rgba(82,68,109,0.4) 100%); }
-.card-thumb--psih   { background: linear-gradient(135deg, rgba(150,106,173,0.3) 0%, rgba(9,7,18,0.8) 100%); }
-.card-thumb--imax   { background: linear-gradient(135deg, rgba(9,7,18,0.9) 0%, rgba(150,106,173,0.25) 100%); }
+.card-thumb--proava { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_pro_aba_club.png') center/cover no-repeat; }
+.card-thumb--aba    { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_aba_con_2026.png') center/cover no-repeat; }
+.card-thumb--swp    { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_subwaterpumps.png') center/cover no-repeat; }
+.card-thumb--psih   { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_psihogolik_design.png') center/cover no-repeat; }
+.card-thumb--imax   { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_imax_tattoo.png') center/cover no-repeat; }
 
 .card-thumb-label {
   font-family: 'Orbitron', sans-serif;
