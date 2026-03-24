@@ -2163,6 +2163,7 @@ body {
     margin-right: auto;
     padding: 40px 0 60px;
   }
+  .hero-name { font-size: 11vw; letter-spacing: 3px; }
   .neon-frame { padding: 32px 20px; }
   .hero-nav {
     flex-wrap: wrap;
