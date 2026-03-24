@@ -90,7 +90,7 @@
     <div class="fog-quote">"Я верю: каждый сайт должен рассказывать историю.<br>Не просто показывать — а говорить."</div>
     <div class="fog-author">— ЕВГЕНИЯ МАКСИМОВА · THMJAY</div>
   </div>
-  <div class="fog-hint">// двигай мышью чтобы увидеть</div>
+  <div class="fog-hint">// двигай мышью · на телефоне зажми экран</div>
 </section>
 
 <!-- Индикатор темы джойстика -->
@@ -2135,14 +2135,18 @@ try {
   })
   section.addEventListener('mouseleave', () => { targetR = 0 })
 
-  // Тач-поддержка
-  section.addEventListener('touchmove', e => {
-    e.preventDefault()
+  // Тач-поддержка — зажатие раскрывает туман, скролл не блокируем
+  section.addEventListener('touchstart', e => {
     const r = section.getBoundingClientRect()
     mouseX = e.touches[0].clientX - r.left
     mouseY = e.touches[0].clientY - r.top
-    targetR = 130
-  }, { passive: false })
+    targetR = 160
+  }, { passive: true })
+  section.addEventListener('touchmove', e => {
+    const r = section.getBoundingClientRect()
+    mouseX = e.touches[0].clientX - r.left
+    mouseY = e.touches[0].clientY - r.top
+  }, { passive: true })
   section.addEventListener('touchend', () => { targetR = 0 })
 
   function tick() {
@@ -2452,18 +2456,17 @@ try {
     const parts = []
     document.addEventListener('touchmove', e => {
       for (const t of e.touches) {
-        for (let i = 0; i < 4; i++) {
-          parts.push({
-            x: t.clientX + (Math.random() - 0.5) * 24,
-            y: t.clientY + (Math.random() - 0.5) * 24,
-            r: 2 + Math.random() * 5,
-            vx: (Math.random() - 0.5) * 1.8,
-            vy: (Math.random() - 0.5) * 1.8 - 0.8,
-            life: 1,
-            decay: 0.035 + Math.random() * 0.04,
-            col: Math.random() > 0.4 ? '0,229,255' : '199,154,205',
-          })
-        }
+        parts.push({
+          x: t.clientX + (Math.random() - 0.5) * 10,
+          y: t.clientY + (Math.random() - 0.5) * 10,
+          r: 1.5 + Math.random() * 2,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: -0.4 - Math.random() * 0.6,
+          life: 1,
+          decay: 0.06 + Math.random() * 0.04,
+          col: Math.random() > 0.5 ? '0,229,255' : '199,154,205',
+        })
+        if (parts.length > 40) parts.shift()
       }
     }, { passive: true })
 
@@ -2552,7 +2555,7 @@ try {
   const fogCanvas = document.getElementById('fog-canvas')
   const fogHint   = document.querySelector('.fog-hint')
   if (fogCanvas && fogHint) {
-    fogHint.textContent = '// свайп для раскрытия'
+    fogHint.textContent = '// зажми на экран'
     let revealed = false
     fogCanvas.closest('section')?.addEventListener('touchmove', e => {
       if (revealed) return
