@@ -2158,10 +2158,10 @@ body {
 
   /* ── Hero ── */
   .hero-inner {
-    width: 90vw;
-    margin: 0 auto;
+    width: 92vw;
+    margin-left: auto;
+    margin-right: auto;
     padding: 40px 0 60px;
-    margin-top: 0;
   }
   .neon-frame { padding: 32px 20px; }
   .hero-nav {
