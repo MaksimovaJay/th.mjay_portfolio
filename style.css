@@ -325,6 +325,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  overflow: hidden;
   background:
     url('image/city-bag-gradient-color.png') center center / cover no-repeat;
 }
@@ -2175,11 +2176,12 @@ body {
   .arcade-trigger { font-size: 13px; padding: 6px 12px; }
 
   /* ── Портфолио — карусель ── */
-  .portfolio-carousel-wrap { display: flex; }
+  .portfolio-carousel-wrap { display: flex; overflow: hidden; max-width: 100%; }
   .portfolio-grid {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    max-width: 100%;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
