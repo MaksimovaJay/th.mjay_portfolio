@@ -1118,6 +1118,14 @@ window.addEventListener('DOMContentLoaded', () => {
       .to(el, { duration: 1.5 + i * 0.3 })
   })
 
+  dpadButtons.forEach((el, i) => {
+    if (!el) return
+    const tl = gsap.timeline({ repeat: -1, delay: 2 + i * 0.4 })
+    tl.to(el, { filter: 'drop-shadow(0 0 5px #00E5FF) drop-shadow(0 0 10px #00E5FF)', duration: 0.7, ease: 'sine.inOut' })
+      .to(el, { filter: 'none', duration: 1.0, ease: 'sine.inOut' })
+      .to(el, { duration: 2 + i * 0.2 })
+  })
+
   // ─────────────────────────────────────────
   // 4. КНОПКИ — hover + click glow
   // ─────────────────────────────────────────
