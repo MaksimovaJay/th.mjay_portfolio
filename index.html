@@ -1108,6 +1108,17 @@ window.addEventListener('DOMContentLoaded', () => {
   glareShimmer(rightGlare)
 
   // ─────────────────────────────────────────
+  // 3б. КНОПКИ — idle pulse glow
+  // ─────────────────────────────────────────
+  Object.values(buttons).forEach(({ el, color }, i) => {
+    if (!el) return
+    const tl = gsap.timeline({ repeat: -1, delay: i * 0.6 })
+    tl.to(el, { filter: `drop-shadow(0 0 6px ${color}) drop-shadow(0 0 12px ${color})`, duration: 0.8, ease: 'sine.inOut' })
+      .to(el, { filter: 'none', duration: 1.2, ease: 'sine.inOut' })
+      .to(el, { duration: 1.5 + i * 0.3 })
+  })
+
+  // ─────────────────────────────────────────
   // 4. КНОПКИ — hover + click glow
   // ─────────────────────────────────────────
   Object.values(buttons).forEach(({ el, color }) => {
