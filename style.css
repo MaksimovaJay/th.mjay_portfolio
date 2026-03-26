@@ -5,14 +5,23 @@
    ======================== */
 :root {
   --black:    #090712;
-  --deep:     #52446D;
-  --purple:   #966AAD;
-  --lavender: #C79ACD;
-  --pink:     #FAD8F8;
-  --sq: #FAD8F8;    /* □ square  */
-  --ci: #966AAD;    /* ○ circle  */
-  --tr: #00E5FF;    /* △ triangle */
-  --cr: #C79ACD;    /* ✕ cross   */
+  --deep:     #3A2850;
+
+  /* ── Цветовая система ── */
+  --primary:   #B060D0;   /* фиолетовый — ведёт взгляд */
+  --secondary: #00E5FF;   /* циан — кнопки, ссылки, интерактив */
+  --support:   #9B7AB8;   /* лаванда — вторичный текст */
+  --quiet:     #52446D;   /* тёмный — рамки, фоны */
+  --text:      #E8D0F0;   /* светлый — читаемый текст */
+
+  /* legacy aliases — чтоб не ломать старые ссылки */
+  --purple:   var(--primary);
+  --lavender: var(--support);
+  --pink:     var(--text);
+  --sq: var(--text);
+  --ci: var(--primary);
+  --tr: var(--secondary);
+  --cr: var(--support);
 }
 
 /* ========================
@@ -186,7 +195,7 @@
   flex-shrink: 0;
   transition: background 0.2s;
 }
-.sh-cta:hover { background: var(--pink); }
+.sh-cta:hover { background: var(--primary); color: var(--text); }
 @media (max-width: 800px) {
   .sh-nav { display: none; }
   .sticky-header { padding: 0 24px; }
@@ -457,7 +466,7 @@ body {
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(250,216,248,0.55);
+  color: var(--support);
   text-decoration: none;
   padding: 8px 24px;
   position: relative;
@@ -471,13 +480,13 @@ body {
   left: 50%;
   right: 50%;
   height: 1px;
-  background: var(--lavender);
+  background: var(--secondary);
   transition: left 0.3s, right 0.3s;
-  box-shadow: 0 0 8px var(--lavender);
+  box-shadow: 0 0 8px var(--secondary);
 }
 
 .nav-link:hover {
-  color: var(--pink);
+  color: var(--secondary);
 }
 .nav-link:hover::after {
   left: 24px;
@@ -497,11 +506,11 @@ body {
   font-weight: 900;
   letter-spacing: 8px;
   line-height: 1;
-  color: var(--pink);
+  color: var(--primary);
   text-shadow:
-    0 0 20px rgba(250,216,248,0.6),
-    0 0 60px rgba(199,154,205,0.3),
-    0 0 120px rgba(150,106,173,0.2);
+    0 0 20px rgba(176,96,208,0.8),
+    0 0 60px rgba(176,96,208,0.4),
+    0 0 120px rgba(176,96,208,0.2);
   position: relative;
   display: inline-block;
 }
@@ -624,14 +633,14 @@ body {
    □ ПОРТФОЛИО
    ======================== */
 #portfolio .section-btn-icon {
-  color: var(--sq);
-  border-color: var(--sq);
-  box-shadow: 0 0 16px rgba(250,216,248,0.3), inset 0 0 16px rgba(250,216,248,0.05);
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 16px rgba(176,96,208,0.3), inset 0 0 16px rgba(176,96,208,0.05);
   border-radius: 4px;
 }
-#portfolio .section-title  { color: var(--sq); text-shadow: 0 0 20px rgba(250,216,248,0.4); }
-#portfolio .section-divider { background: linear-gradient(to right, var(--sq), transparent); }
-#portfolio .cyber-panel::before { background: var(--sq); box-shadow: 0 0 8px var(--sq); }
+#portfolio .section-title  { color: var(--primary); text-shadow: 0 0 20px rgba(176,96,208,0.5); }
+#portfolio .section-divider { background: linear-gradient(to right, var(--primary), transparent); }
+#portfolio .cyber-panel::before { background: var(--primary); box-shadow: 0 0 8px var(--primary); }
 
 .portfolio-grid {
   display: grid;
@@ -718,13 +727,13 @@ body {
    ○ ОБО МНЕ
    ======================== */
 #about .section-btn-icon {
-  color: var(--ci);
-  border-color: var(--ci);
-  box-shadow: 0 0 16px rgba(150,106,173,0.35), inset 0 0 16px rgba(150,106,173,0.05);
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 16px rgba(176,96,208,0.35), inset 0 0 16px rgba(176,96,208,0.05);
 }
-#about .section-title  { color: var(--ci); text-shadow: 0 0 20px rgba(150,106,173,0.5); }
-#about .section-divider { background: linear-gradient(to right, var(--ci), transparent); }
-#about .cyber-panel::before { background: var(--ci); box-shadow: 0 0 8px var(--ci); }
+#about .section-title  { color: var(--primary); text-shadow: 0 0 20px rgba(176,96,208,0.5); }
+#about .section-divider { background: linear-gradient(to right, var(--primary), transparent); }
+#about .cyber-panel::before { background: var(--primary); box-shadow: 0 0 8px var(--primary); }
 
 /* About — новый лейаут с фото */
 .about-layout {
@@ -816,7 +825,7 @@ body {
 
 .about-bio {
   font-size: 14px;
-  line-height: 2;
+  line-height: 1.2;
   color: rgba(250,216,248,0.7);
   margin-bottom: 28px;
 }
@@ -920,17 +929,17 @@ body {
    △ УСЛУГИ
    ======================== */
 #services .section-btn-icon {
-  color: var(--tr);
-  border-color: var(--tr);
-  box-shadow: 0 0 16px rgba(0,229,255,0.3), inset 0 0 16px rgba(0,229,255,0.04);
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 16px rgba(176,96,208,0.3), inset 0 0 16px rgba(176,96,208,0.04);
   border-radius: 4px;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   border-radius: 0;
-  background: rgba(0,229,255,0.08);
+  background: rgba(176,96,208,0.08);
 }
-#services .section-title  { color: var(--tr); text-shadow: 0 0 20px rgba(0,229,255,0.4); }
-#services .section-divider { background: linear-gradient(to right, var(--tr), transparent); }
-#services .cyber-panel::before { background: var(--tr); box-shadow: 0 0 8px var(--tr); }
+#services .section-title  { color: var(--primary); text-shadow: 0 0 20px rgba(176,96,208,0.4); }
+#services .section-divider { background: linear-gradient(to right, var(--primary), transparent); }
+#services .cyber-panel::before { background: var(--primary); box-shadow: 0 0 8px var(--primary); }
 
 /* Секция Услуги с изо-фоном */
 .services-bg-section {
@@ -1011,7 +1020,7 @@ body {
 
 .service-desc {
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.2;
   color: rgba(250,216,248,0.5);
 }
 
@@ -1019,13 +1028,13 @@ body {
    ✕ СВЯЗЬ
    ======================== */
 #contact .section-btn-icon {
-  color: var(--cr);
-  border-color: var(--cr);
-  box-shadow: 0 0 16px rgba(199,154,205,0.3), inset 0 0 16px rgba(199,154,205,0.05);
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 16px rgba(176,96,208,0.3), inset 0 0 16px rgba(176,96,208,0.05);
 }
-#contact .section-title  { color: var(--cr); text-shadow: 0 0 20px rgba(199,154,205,0.4); }
-#contact .section-divider { background: linear-gradient(to right, var(--cr), transparent); }
-#contact .cyber-panel::before { background: var(--cr); box-shadow: 0 0 8px var(--cr); }
+#contact .section-title  { color: var(--primary); text-shadow: 0 0 20px rgba(176,96,208,0.4); }
+#contact .section-divider { background: linear-gradient(to right, var(--primary), transparent); }
+#contact .cyber-panel::before { background: var(--primary); box-shadow: 0 0 8px var(--primary); }
 
 .contact-grid {
   display: grid;
@@ -1066,7 +1075,7 @@ body {
 
 .contact-note {
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.2;
   color: rgba(250,216,248,0.5);
   margin-top: 24px;
 }
@@ -1511,7 +1520,7 @@ body {
 
 .fog-quote {
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.2;
   color: rgba(250,216,248,0.6);
   font-style: italic;
   margin-bottom: 16px;
@@ -1751,7 +1760,7 @@ body {
 }
 .rv-text {
   font-size: 13px;
-  line-height: 1.85;
+  line-height: 1.2;
   color: rgba(250,216,248,0.65);
   flex: 1;
 }
@@ -2094,7 +2103,7 @@ body {
 
 .case-content p {
   font-size: 14px;
-  line-height: 1.9;
+  line-height: 1.2;
   color: rgba(250,216,248,0.65);
   margin-bottom: 16px;
 }
