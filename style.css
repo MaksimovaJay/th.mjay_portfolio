@@ -844,24 +844,23 @@ body {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 4px 0;
 }
 
 .skill-tag {
   font-family: 'Space Mono', monospace;
   font-size: 12px;
   letter-spacing: 2px;
-  padding: 6px 14px;
-  border: 1px solid rgba(150,106,173,0.4);
-  color: var(--lavender);
-  background: rgba(150,106,173,0.06);
-  transition: all 0.2s;
+  color: var(--support);
+  opacity: 0.6;
+  padding: 2px 0;
 }
-
-.skill-tag:hover {
-  border-color: var(--ci);
-  color: var(--ci);
-  box-shadow: 0 0 12px rgba(150,106,173,0.3);
+.skill-tag::after {
+  content: ' /';
+  opacity: 0.3;
+}
+.skill-tag:last-child::after {
+  content: '';
 }
 
 .figma-portfolio-link {
