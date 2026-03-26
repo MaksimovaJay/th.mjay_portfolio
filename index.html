@@ -2310,14 +2310,7 @@ try {
     setTimeout(() => r.remove(), 600)
   })
 
-  /* ── 5. NEON FLICKER на nav ── */
-  const navLinks = document.querySelectorAll('.nav-link, .sh-link')
-  setInterval(() => {
-    const el = navLinks[Math.floor(Math.random() * navLinks.length)]
-    if (!el) return
-    el.classList.add('flickering')
-    setTimeout(() => el.classList.remove('flickering'), 450)
-  }, 2800)
+  /* neon flicker убран — лишний шум */
 
   /* ── 6. SCROLL REVEAL ── */
   document.querySelectorAll('.cyber-section, .cyber-panel, .fw-card, .rv-card').forEach(el => {
@@ -2635,18 +2628,7 @@ try {
     })
   }
 
-  /* ── 3. SECTION TITLE GLITCH REVEAL ── */
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          en.target.classList.add('mob-glitch-in')
-          obs.unobserve(en.target)
-        }
-      })
-    }, { threshold: 0.6 })
-    document.querySelectorAll('.section-title').forEach(t => obs.observe(t))
-  }
+  /* section title glitch убран — лишний шум */
 
   /* ── 4. HERO NAME TAP → GLITCH EXPLOSION ── */
   const heroName = document.querySelector('.hero-name')
