@@ -2425,6 +2425,18 @@ try {
     { threshold: 0.1 }
   )
   observer.observe(hero)
+
+  // Джойстик — скрывать при скролле вниз, показывать при скролле вверх
+  const ctrl = document.getElementById('controller-wrap')
+  if (ctrl) {
+    let lastY = window.scrollY
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY
+      if (y > lastY && y > 200) ctrl.classList.add('ctrl-hidden')
+      else ctrl.classList.remove('ctrl-hidden')
+      lastY = y
+    }, { passive: true })
+  }
 })()
 </script>
 
