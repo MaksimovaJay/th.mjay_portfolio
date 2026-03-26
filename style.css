@@ -319,9 +319,10 @@ html {
 body {
   font-family: 'Space Mono', monospace;
   background: var(--black);
-  color: var(--pink);
+  color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.2;
 }
 
 /* ========================
@@ -440,10 +441,10 @@ body {
 .frame-label {
   position: absolute;
   font-family: 'Space Mono', monospace;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 2px;
-  opacity: 0.4;
-  color: var(--tr);
+  opacity: 0.25;
+  color: var(--support);
 }
 .frame-label.tl { top: 8px; left: 36px; }
 .frame-label.tr { top: 8px; right: 36px; text-align: right; }
@@ -519,19 +520,20 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: clamp(12px, 1.8vw, 16px);
   letter-spacing: 6px;
-  color: var(--tr);
+  color: var(--support);
   text-transform: uppercase;
   margin-top: 16px;
-  opacity: 0.85;
-  text-shadow: 0 0 12px rgba(0,229,255,0.5);
+  opacity: 0.7;
+  line-height: 1.2;
 }
 
 .hero-jp {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 4px;
-  color: rgba(150,106,173,0.5);
+  color: var(--quiet);
   margin-top: 10px;
   font-style: italic;
+  opacity: 0.5;
 }
 
 /* Glitch анимация на имени */
@@ -588,22 +590,23 @@ body {
 
 .section-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(26px, 4.5vw, 44px);
-  font-weight: 700;
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900;
   letter-spacing: 4px;
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .section-divider {
   flex: 1;
   height: 1px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .section-code {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 2px;
-  opacity: 0.4;
+  opacity: 0.25;
 }
 
 /* ========================
@@ -694,19 +697,21 @@ body {
 .card-body { padding: 20px; }
 
 .card-num {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
-  color: var(--sq);
-  opacity: 0.6;
+  color: var(--support);
+  opacity: 0.4;
   margin-bottom: 8px;
 }
 
 .card-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: var(--pink);
+  color: var(--text);
   margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .card-tags {
@@ -716,11 +721,12 @@ body {
 }
 
 .tag {
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 2px;
   padding: 3px 10px;
-  border: 1px solid rgba(250,216,248,0.2);
-  color: rgba(250,216,248,0.5);
+  border: 1px solid rgba(176,96,208,0.25);
+  color: var(--support);
+  opacity: 0.7;
 }
 
 /* ========================
