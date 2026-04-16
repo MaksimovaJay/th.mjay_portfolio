@@ -1157,6 +1157,7 @@ body {
 .card-thumb--swp    { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_subwaterpumps.png') center/cover no-repeat; }
 .card-thumb--psih   { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_psihogolik_design.png') center/cover no-repeat; }
 .card-thumb--imax   { background: linear-gradient(rgba(9,7,18,0.35),rgba(9,7,18,0.35)), url('image/cover_portfolio/cover_imax_tattoo.png') center/cover no-repeat; }
+.card-thumb--irina  { background: linear-gradient(135deg, rgba(60,40,30,0.9) 0%, rgba(100,60,40,0.6) 50%, rgba(40,50,30,0.8) 100%); }
 
 .card-thumb-label {
   font-family: 'Orbitron', sans-serif;
