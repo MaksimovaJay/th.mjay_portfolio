@@ -219,25 +219,8 @@
   box-shadow: 0 0 6px var(--tr);
   transition: transform 0.1s, background 0.2s;
 }
-#cursor-ring {
-  position: absolute;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(0,229,255,0.55);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, opacity 0.2s, border-color 0.2s;
-}
 #custom-cursor.hovering #cursor-dot { transform: translate(-50%,-50%) scale(2.2); background: var(--pink); }
-#custom-cursor.hovering #cursor-ring { width: 48px; height: 48px; border-color: var(--pink); opacity: 0.6; }
 #custom-cursor.clicking #cursor-dot { transform: translate(-50%,-50%) scale(0.5); }
-#custom-cursor.clicking #cursor-ring { width: 20px; height: 20px; opacity: 1; }
-
-/* cursor trail canvas */
-#trail-canvas {
-  position: fixed; inset: 0;
-  pointer-events: none; z-index: 9990;
-  width: 100%; height: 100%;
-}
 
 /* scroll progress */
 #scroll-progress {
@@ -2168,8 +2151,7 @@ body {
   /* Убираем декоративные фиксированные элементы */
   #controller-wrap,
   #controller-hint,
-  #data-sidebar,
-  #trail-canvas { display: none !important; }
+  #data-sidebar { display: none !important; }
 
   /* Курсор — возвращаем системный на тач */
   .has-custom-cursor,
