@@ -205,22 +205,6 @@
    EXTRAS: cursor / trail / progress / glitch / sidebar / konami
    ======================== */
 
-/* скрываем системный курсор только когда активен кастомный */
-.has-custom-cursor,
-.has-custom-cursor * { cursor: none !important; }
-
-#custom-cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; }
-#cursor-dot {
-  position: absolute;
-  width: 6px; height: 6px;
-  background: var(--tr);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 6px var(--tr);
-  transition: transform 0.1s, background 0.2s;
-}
-#custom-cursor.hovering #cursor-dot { transform: translate(-50%,-50%) scale(2.2); background: var(--pink); }
-#custom-cursor.clicking #cursor-dot { transform: translate(-50%,-50%) scale(0.5); }
 
 /* scroll progress */
 #scroll-progress {
@@ -2255,11 +2239,6 @@ body {
   #controller-wrap,
   #controller-hint,
   #data-sidebar { display: none !important; }
-
-  /* Курсор — возвращаем системный на тач */
-  .has-custom-cursor,
-  .has-custom-cursor * { cursor: auto !important; }
-  #custom-cursor { display: none !important; }
 
   /* Скролл-прогресс остаётся */
 

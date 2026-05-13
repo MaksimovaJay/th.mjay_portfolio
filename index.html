@@ -768,7 +768,6 @@
 
 <!-- ══ UI EXTRAS ══ -->
 <div id="scroll-progress"></div>
-<div id="custom-cursor"><div id="cursor-dot"></div></div>
 <div id="data-sidebar"><canvas id="data-canvas"></canvas></div>
 <div id="konami-flash"></div>
 
@@ -2301,22 +2300,7 @@ try {
   const isTouch = window.matchMedia('(hover: none)').matches
   if (isTouch) return
 
-  /* ── 1. КАСТОМНЫЙ КУРСОР ── */
-  const cur  = document.getElementById('custom-cursor')
-  const dot  = document.getElementById('cursor-dot')
-
-  document.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px'
-    document.documentElement.classList.add('has-custom-cursor')
-  })
-
-  document.addEventListener('mousedown', () => cur.classList.add('clicking'))
-  document.addEventListener('mouseup',   () => cur.classList.remove('clicking'))
-
-  document.querySelectorAll('a,button,[style*="cursor:pointer"],[style*="cursor: pointer"]').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('hovering'))
-    el.addEventListener('mouseleave', () => cur.classList.remove('hovering'))
-  })
+  /* кастомный курсор убран — используем нативный */
 
 
   /* ── 3. SCROLL PROGRESS ── */
@@ -2415,13 +2399,26 @@ try {
     let cur = 0
     let busy = false
 
+    const DURATION = 1200 // фиксированная длительность, не зависит от мышки
+
     function goTo(idx) {
       if (busy || idx < 0 || idx >= slides.length) return
       busy = true
       cur = idx
-      slides[idx].scrollIntoView({ behavior: 'smooth' })
       fpDots.forEach((d, i) => d.classList.toggle('active', i === idx))
-      setTimeout(() => { busy = false }, 900)
+
+      const startY = window.scrollY
+      const endY   = slides[idx].getBoundingClientRect().top + startY
+      const t0     = performance.now()
+
+      ;(function step(now) {
+        const p = Math.min((now - t0) / DURATION, 1)
+        // ease in-out cubic
+        const e = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2
+        window.scrollTo(0, startY + (endY - startY) * e)
+        if (p < 1) requestAnimationFrame(step)
+        else busy = false
+      })(t0)
     }
 
     // Колёсико: одно движение = один слайд
