@@ -2390,67 +2390,17 @@ try {
     if (el) dotObs.observe(el)
   })
 
-  /* ── 7. FULLPAGE WHEEL HIJACK ── */
-  ;(function () {
-    const isMobile = window.matchMedia('(hover: none), (max-width: 768px)').matches
-    if (isMobile) return
-
-    const slides = FP_SECTIONS.map(({ id }) => document.getElementById(id)).filter(Boolean)
-    let cur = 0
-    let busy = false
-
-    const DURATION = 1200 // фиксированная длительность, не зависит от мышки
-
-    function goTo(idx) {
-      if (busy || idx < 0 || idx >= slides.length) return
-      busy = true
-      cur = idx
-      fpDots.forEach((d, i) => d.classList.toggle('active', i === idx))
-
-      const startY = window.scrollY
-      const endY   = slides[idx].getBoundingClientRect().top + startY
-      const t0     = performance.now()
-
-      ;(function step(now) {
-        const p = Math.min((now - t0) / DURATION, 1)
-        // ease in-out cubic
-        const e = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2
-        window.scrollTo(0, startY + (endY - startY) * e)
-        if (p < 1) requestAnimationFrame(step)
-        else busy = false
-      })(t0)
-    }
-
-    // Колёсико: одно движение = один слайд
-    window.addEventListener('wheel', e => {
-      // Если курсор над портфолио-гридом — дать ему скроллиться
-      const grid = document.getElementById('portfolio-grid')
-      if (grid && grid.matches(':hover')) {
-        const atTop    = grid.scrollTop <= 0
-        const atBottom = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 2
-        if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) return
-      }
-      e.preventDefault()
-      goTo(e.deltaY > 0 ? cur + 1 : cur - 1)
-    }, { passive: false })
-
-    // Клавиши
-    window.addEventListener('keydown', e => {
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goTo(cur + 1) }
-      if (e.key === 'ArrowUp'   || e.key === 'PageUp')   { e.preventDefault(); goTo(cur - 1) }
+  /* ── 7. СИНХРОНИЗАЦИЯ DOT ПРИ СКРОЛЛЕ ── */
+  window.addEventListener('scroll', () => {
+    const mid = window.innerHeight / 2
+    const idx = FP_SECTIONS.findIndex(({ id }) => {
+      const el = document.getElementById(id)
+      if (!el) return false
+      const r = el.getBoundingClientRect()
+      return r.top <= mid && r.bottom > mid
     })
-
-    // Синхронизация cur при клике по nav-ссылкам / dot
-    window.addEventListener('scroll', () => {
-      if (busy) return
-      const mid = window.innerHeight / 2
-      const found = slides.findIndex(s => {
-        const r = s.getBoundingClientRect()
-        return r.top <= mid && r.bottom > mid
-      })
-      if (found !== -1) cur = found
-    }, { passive: true })
-  })()
+    if (idx !== -1) fpDots.forEach((d, i) => d.classList.toggle('active', i === idx))
+  }, { passive: true })
 
   /* ── 8. СЧЁТЧИКИ ЦИФР ── */
   const counters = document.querySelectorAll('[data-count]')

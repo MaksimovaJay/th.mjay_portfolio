@@ -2136,7 +2136,12 @@ body {
    FULLPAGE SCROLL
 ════════════════════════════════════════ */
 
-/* Все секции — полноэкранные слайды */
+/* Браузер обрабатывает snap нативно — быстро, без JS */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 .hero-section,
 .fog-section,
 #portfolio,
@@ -2144,6 +2149,8 @@ body {
 #services,
 #reviews,
 #contact {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -2225,7 +2232,10 @@ body {
 @media (max-width: 768px) {
 
   /* Fullpage: сбрасываем snap и фиксированные высоты */
+  html { scroll-snap-type: none; scroll-behavior: auto; }
   .hero-section, .fog-section, #portfolio, #about, #services, #reviews, #contact {
+    scroll-snap-align: none;
+    scroll-snap-stop: unset;
     height: auto;
     min-height: 100svh;
     overflow: visible;
