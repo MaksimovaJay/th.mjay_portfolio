@@ -546,9 +546,14 @@ body {
    КОНТЕНТ СЕКЦИИ
    ======================== */
 .cyber-section {
-  padding: 100px 40px 120px;
+  padding: 50px 40px 30px;
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .section-header {
@@ -951,7 +956,7 @@ body {
   z-index: 2;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 100px 40px 120px;
+  padding: 50px 40px 30px;
 }
 
 .services-grid {
@@ -2144,9 +2149,116 @@ body {
 
 
 /* ════════════════════════════════════════
+   FULLPAGE SCROLL
+════════════════════════════════════════ */
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* Все секции — snap-точки */
+.hero-section,
+.fog-section,
+#portfolio,
+#about,
+#services,
+#reviews,
+#contact {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Fog: было 420px, теперь полный экран */
+.fog-section { height: 100vh !important; overflow: hidden; }
+
+/* Hero: уже 100vh, просто фиксируем overflow */
+.hero-section { height: 100vh; overflow: hidden; }
+
+/* Portfolio grid: скроллится внутри секции */
+.portfolio-grid {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: none;
+}
+.portfolio-grid::-webkit-scrollbar { display: none; }
+
+/* About layout: scrollable if tall */
+.about-layout {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.about-layout::-webkit-scrollbar { display: none; }
+
+/* Services */
+.services-bg-section { height: 100vh; overflow: hidden; }
+.services-inner {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+.services-inner::-webkit-scrollbar { display: none; }
+
+/* Reviews: центрируем по вертикали */
+#reviews { display: flex; flex-direction: column; justify-content: center; }
+
+/* Contact: скролл если нужен */
+#contact { overflow-y: auto; }
+
+/* Section nav dots */
+#fp-nav {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9000;
+}
+.fp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,229,255,0.2);
+  border: 1px solid rgba(0,229,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0;
+  outline: none;
+  appearance: none;
+}
+.fp-dot.active {
+  background: var(--tr);
+  box-shadow: 0 0 8px var(--tr);
+  height: 20px;
+  border-radius: 3px;
+}
+
+/* ════════════════════════════════════════
    MOBILE — 768px (планшет)
 ════════════════════════════════════════ */
 @media (max-width: 768px) {
+
+  /* Fullpage: сбрасываем snap и фиксированные высоты */
+  html { scroll-snap-type: none; }
+  .hero-section, .fog-section, #portfolio, #about, #services, #reviews, #contact {
+    height: auto;
+    min-height: 100svh;
+    scroll-snap-align: none;
+    overflow: visible;
+  }
+  .fog-section { height: 420px !important; overflow: hidden; }
+  .cyber-section { height: auto; display: block; overflow: visible; }
+  .about-layout, .portfolio-grid, .services-inner { overflow: visible; }
+  #fp-nav { display: none; }
 
   /* Убираем декоративные фиксированные элементы */
   #controller-wrap,

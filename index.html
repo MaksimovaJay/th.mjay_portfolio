@@ -2338,14 +2338,73 @@ try {
 
   /* neon flicker убран — лишний шум */
 
-  /* ── 6. SCROLL REVEAL ── */
-  document.querySelectorAll('.cyber-section, .cyber-panel, .fw-card, .rv-card').forEach(el => {
-    el.classList.add('reveal')
-  })
+  /* ── 6. SCROLL REVEAL + FULLPAGE ANIMATIONS ── */
+
+  // Панели и карточки: reveal при входе, сброс при выходе
   const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target) } })
-  }, { threshold: 0.1 })
-  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el))
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible')
+      else e.target.classList.remove('visible')
+    })
+  }, { threshold: 0.15 })
+  document.querySelectorAll('.cyber-panel, .fw-card, .rv-card').forEach(el => {
+    el.classList.add('reveal')
+    revObs.observe(el)
+  })
+
+  // Секционные анимации: заголовки + fog-контент через GSAP
+  const secObs = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      const items = target.querySelectorAll(
+        '.section-header > *, .fog-content > *, .figma-portfolio-link'
+      )
+      if (!items.length) return
+      if (isIntersecting) {
+        gsap.fromTo(items,
+          { opacity: 0, y: 28 },
+          { opacity: 1, y: 0, duration: 0.55, stagger: 0.09, ease: 'power2.out', overwrite: true }
+        )
+      } else {
+        gsap.set(items, { opacity: 0, y: 18 })
+      }
+    })
+  }, { threshold: 0.2 })
+  document.querySelectorAll('section:not(#hero)').forEach(s => secObs.observe(s))
+
+  // Nav dots
+  const FP_SECTIONS = [
+    { id: 'hero',        label: 'HOME' },
+    { id: 'fog-section', label: 'INTRO' },
+    { id: 'portfolio',   label: 'WORK' },
+    { id: 'about',       label: 'ABOUT' },
+    { id: 'services',    label: 'SERVICES' },
+    { id: 'reviews',     label: 'REVIEWS' },
+    { id: 'contact',     label: 'CONTACT' },
+  ]
+  const fpNav = document.createElement('nav')
+  fpNav.id = 'fp-nav'
+  FP_SECTIONS.forEach(({ id, label }) => {
+    const dot = document.createElement('button')
+    dot.className = 'fp-dot'
+    dot.title = label
+    dot.addEventListener('click', () => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    })
+    fpNav.appendChild(dot)
+  })
+  document.body.appendChild(fpNav)
+
+  const fpDots = [...fpNav.querySelectorAll('.fp-dot')]
+  const dotObs = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      const idx = FP_SECTIONS.findIndex(s => s.id === target.id)
+      if (idx !== -1) fpDots[idx]?.classList.toggle('active', isIntersecting)
+    })
+  }, { threshold: 0.5 })
+  FP_SECTIONS.forEach(({ id }) => {
+    const el = document.getElementById(id)
+    if (el) dotObs.observe(el)
+  })
 
   /* ── 7. СЧЁТЧИКИ ЦИФР ── */
   const counters = document.querySelectorAll('[data-count]')
