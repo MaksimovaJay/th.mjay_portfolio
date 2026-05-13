@@ -2340,11 +2340,13 @@ try {
 
   /* ── 6. SCROLL REVEAL + FULLPAGE ANIMATIONS ── */
 
-  // Панели и карточки: reveal при входе, сброс при выходе
+  // Панели и карточки: reveal один раз при первом входе
   const revObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible')
-      else e.target.classList.remove('visible')
+      if (e.isIntersecting) {
+        e.target.classList.add('visible')
+        revObs.unobserve(e.target)
+      }
     })
   }, { threshold: 0.15 })
   document.querySelectorAll('.cyber-panel, .fw-card, .rv-card').forEach(el => {
@@ -2352,21 +2354,19 @@ try {
     revObs.observe(el)
   })
 
-  // Секционные анимации: заголовки + fog-контент через GSAP
+  // Заголовки и fog: GSAP один раз при первом входе
   const secObs = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
+      if (!isIntersecting) return
       const items = target.querySelectorAll(
         '.section-header > *, .fog-content > *, .figma-portfolio-link'
       )
       if (!items.length) return
-      if (isIntersecting) {
-        gsap.fromTo(items,
-          { opacity: 0, y: 28 },
-          { opacity: 1, y: 0, duration: 0.55, stagger: 0.09, ease: 'power2.out', overwrite: true }
-        )
-      } else {
-        gsap.set(items, { opacity: 0, y: 18 })
-      }
+      gsap.fromTo(items,
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.55, stagger: 0.09, ease: 'power2.out' }
+      )
+      secObs.unobserve(target)
     })
   }, { threshold: 0.2 })
   document.querySelectorAll('section:not(#hero)').forEach(s => secObs.observe(s))

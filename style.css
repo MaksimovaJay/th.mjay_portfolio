@@ -2153,7 +2153,6 @@ body {
 ════════════════════════════════════════ */
 html {
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
